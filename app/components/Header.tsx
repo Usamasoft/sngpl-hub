@@ -6,10 +6,11 @@ import { usePathname } from 'next/navigation';
 const nav = [
   { href: '/',               label: 'Home' },
   { href: '/bill-check',     label: 'Bill Check' },
-  { href: '/consumer-number',label: 'Consumer Number' },
+  { href: '/consumer-number',label: 'Consumer No.' },
   { href: '/duplicate-bill', label: 'Duplicate Bill' },
-  { href: '/payment-guide',  label: 'Payment Guide' },
+  { href: '/payment-guide',  label: 'Payment' },
   { href: '/calculator',     label: 'Calculator' },
+  { href: '/guides',         label: 'Guides' },
 ];
 
 export default function Header() {
@@ -45,7 +46,7 @@ export default function Header() {
           </Link>
 
           {/* ── Desktop Nav ── */}
-          <nav className="hidden xl:flex items-center gap-0.5" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
             {nav.map(l => (
               <Link key={l.href} href={l.href}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
@@ -70,7 +71,7 @@ export default function Header() {
 
             <button
               onClick={() => setOpen(!open)}
-              className="xl:hidden p-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-colors"
               aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}>
               {open
@@ -83,7 +84,7 @@ export default function Header() {
 
       {/* ── Mobile Menu ── */}
       {open && (
-        <div className="xl:hidden border-t border-gray-100 bg-white animate-fade-in">
+        <div className="lg:hidden border-t border-gray-100 bg-white animate-fade-in">
           <nav className="max-w-7xl mx-auto px-4 py-3 space-y-0.5" aria-label="Mobile navigation">
             {nav.map(l => (
               <Link key={l.href} href={l.href}

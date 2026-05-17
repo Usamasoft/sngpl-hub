@@ -195,7 +195,54 @@ Both services are particularly useful for consumers in ${city.name} areas where 
     { q: `What is the SNGPL WhatsApp number for ${city.name} bill check?`, a: `SNGPL operates an official WhatsApp service for bill inquiries. Save the official SNGPL WhatsApp number listed on sngpl.com.pk and send your consumer number as a message. The automated bot responds with your bill summary. Note: SNGPL's official WhatsApp number may change — always verify on the official website rather than relying on numbers shared on social media.` },
     { q: `How do I register a complaint about my ${city.name} SNGPL bill?`, a: `You can register a complaint through: (1) Online at selfservice.sngpl.com.pk — create an account and submit your complaint with supporting documents. (2) Helpline 1199 — state your consumer number and describe the issue. (3) Visit ${city.office} in person with your bill and CNIC. All complaints receive a reference number for tracking. Billing disputes are typically resolved within 7–14 working days.` },
     { q: `What is HHM in my ${city.name} SNGPL gas bill?`, a: `HHM stands for Hundred Heat Meter — the unit used by SNGPL to measure natural gas consumption. One HHM equals 100 cubic feet of gas. Your meter display shows cumulative HHM readings. The difference between your current month's reading and last month's reading gives the HHM consumed in that billing period, which is then used to calculate your bill using SNGPL's slab tariff.` },
+    { q: `When does SNGPL generate bills for ${city.name} consumers?`, a: `SNGPL generates bills on a monthly cycle. The specific date depends on the meter reading circuit assigned to your area in ${city.name}. Bills are typically generated within 2–3 working days of the meter reading date, then dispatched via postal service. Use billchecker.sngpl.com.pk to check your bill as soon as it is generated, even before the physical copy arrives.` },
+    { q: `Can I pay less than the full SNGPL bill amount to avoid disconnection?`, a: `SNGPL requires full payment of the current bill amount by the due date to avoid late surcharges. However, if you have arrears from previous months, you can sometimes negotiate a payment plan by calling 1199 or visiting ${city.office}. Any payment arrangement must be formalized — verbal agreements are not sufficient. Pay at least the current month's bill in full to prevent disconnection.` },
+    { q: `How do I get an extension on my SNGPL payment due date in ${city.name}?`, a: `Call SNGPL helpline 1199 or visit ${city.office} before the due date passes. Explain your situation and request a due date extension. Extensions are granted at SNGPL's discretion and are more likely for consumers with a good payment history. There is no guarantee of approval, so always try to pay before the due date if at all possible.` },
+    { q: `What is the SNGPL Disconnection Notice process in ${city.name}?`, a: `When a bill remains unpaid past the due date and subsequent reminders, SNGPL issues a formal disconnection notice. This notice specifies the outstanding amount and a final deadline for payment before physical disconnection. The notice is sent to your registered connection address in ${city.name}. Upon receipt, pay immediately through any digital channel (Easypaisa, JazzCash, bank app) and call 1199 with your transaction ID to prevent the disconnection order from being executed.` },
+    { q: `Is SNGPL gas available 24 hours in ${city.name}?`, a: `SNGPL strives to maintain 24/7 gas supply in ${city.name}. However, planned maintenance outages (announced in advance), emergency repairs, and seasonal gas load management during peak winter demand may cause temporary supply interruptions in certain areas. Follow SNGPL's official social media accounts and sngpl.com.pk for planned outage announcements in ${city.division}.` },
+    { q: `How do I read my SNGPL gas meter in ${city.name}?`, a: `Your SNGPL gas meter displays cumulative consumption in HHM (Hundred Cubic Meters). Read the digits from left to right — the full number (excluding any decimal digits in a different color) is your current reading. Subtract last month's reading (from your bill) from the current reading to get this month's consumption in HHM. Take a monthly photo of your meter reading and compare it with your bill to catch any reading errors early.` },
+    { q: `What should I do if my SNGPL meter is inaccessible to the meter reader in ${city.name}?`, a: `If your meter is in a location that the SNGPL meter reader cannot easily access (e.g., inside a locked compound, behind a gate, or in an area with no regular access), you can: (1) Leave instructions for the building guard or caretaker to provide access on meter reading days, (2) Submit your own meter reading via the SNGPL mobile app each month before the reading cutoff date, or (3) Contact ${city.office} to arrange an alternative reading arrangement for your specific address.` },
+    { q: `How does SNGPL's load management affect ${city.name} consumers?`, a: `During winter peak demand periods, SNGPL may implement gas load management (rotation schedule) across different zones in ${city.name} and ${city.division} when total demand exceeds available supply capacity. Load management typically involves reducing gas pressure in certain areas during specified hours. SNGPL announces load management schedules through local media and its website. Industrial and commercial consumers may be more affected than residential consumers, who are given priority in OGRA's gas load management guidelines.` },
   ];
+
+  sections.push(
+    {
+      h2: `SNGPL ${city.name} Billing Cycle and Due Dates`,
+      body: `Understanding the SNGPL billing cycle for ${city.name} helps you plan payments and avoid late surcharges. SNGPL generates bills monthly — your specific billing cycle date depends on the meter reading route assigned to your area within ${city.name}. The ${city.division} has multiple meter reading circuits, each assigned a specific reading day of the month.
+
+Once the meter reading is recorded, SNGPL generates your bill within 2–3 working days. The bill is then dispatched via Pakistan Post for delivery to your connection address. In ${city.areas} and similar high-density areas, postal delivery typically takes 5–10 days. Total time from meter reading to bill receipt: 8–15 days on average.
+
+Your due date is printed clearly on your bill — typically 15 to 25 days after the bill generation date. Digital bill checking at billchecker.sngpl.com.pk means you can see your bill as soon as it is generated, even if the physical copy has not yet arrived by post. Setting up bill notifications via the SNGPL mobile app ensures you are alerted the moment your new bill is ready.
+
+If you receive your bill less than 7 days before the due date (which can happen with postal delays in ${city.name}), call SNGPL helpline 1199 immediately. SNGPL can note the delayed delivery on your account and may provide a short payment extension. Documenting postal delays is easier if you habitually check the digital portal and can show the bill was only delivered recently versus when it was generated.
+
+Bills that remain unpaid beyond the due date accrue a 10% late surcharge on the base gas consumption amount. This surcharge is applied automatically by SNGPL's billing system — there is no grace period or waiver for first-time late payers unless a formal extension request is approved. The surcharge amount appears as a separate line item on the following month's bill.`,
+    },
+    {
+      h2: `Seasonal Gas Consumption in ${city.name} — What to Expect`,
+      body: `Gas consumption in ${city.name} follows clear seasonal patterns that directly affect your monthly bill. Understanding these patterns helps you anticipate bill amounts, budget appropriately, and avoid being caught off-guard by winter heating bills.
+
+**Winter Season (November through February):** This is peak consumption season for ${city.name} and the entire ${city.region}. Household gas use increases dramatically due to space heating (gas room heaters and floor heaters), hot water geysers working harder in cold weather, and higher cooking demand. Typical households in ${city.areas} see consumption double or even triple compared to summer months. A household that uses 150 HHM in summer may easily consume 400–600 HHM in peak winter — pushing from Slab 2 into Slab 4 or 5, significantly increasing the per-unit rate paid.
+
+**Spring and Autumn (March-April, September-October):** These shoulder seasons bring moderate consumption. Heating demand reduces but geyser usage remains significant. Bills are typically 30–50% lower than peak winter in ${city.name}. These months are ideal for paying any outstanding winter arrears and building a small advance payment credit to offset the upcoming high-consumption season.
+
+**Summer (May through August):** Lowest gas consumption season for most ${city.name} households. Gas use is primarily for cooking and water heating (at lower temperatures). Many consumers in ${city.areas} and similar urban areas fall into Slab 1 or Slab 2 during summer months, paying the minimum Rs. 200 fixed charge or close to it. However, households with gas-powered air conditioning or industrial cooking operations maintain higher consumption year-round.
+
+Planning ahead for winter: if you know your ${city.name} household typically peaks at 500 HHM in winter (Slab 4, Rs. 170/HHM rate), a rough winter bill estimate before taxes would be: 100 HHM at flat Rs. 200 + 200 HHM at Rs. 130 + 200 HHM at Rs. 150 = Rs. 200 + Rs. 26,000 + Rs. 30,000 = Rs. 56,200 base. After GIDC (10% = Rs. 5,620) and GST (17% on Rs. 61,820 = Rs. 10,509), estimated total ≈ Rs. 72,329. Use our calculator for your specific consumption.`,
+    },
+    {
+      h2: `SNGPL ${city.name} — Tariff History and OGRA Regulation`,
+      body: `SNGPL's gas tariff rates for ${city.name} consumers are not determined by the company itself but are set through a formal regulatory process administered by the Oil and Gas Regulatory Authority (OGRA), established under the OGRA Ordinance 2002. Understanding this regulatory framework helps ${city.name} consumers understand why rates change and what recourse they have.
+
+OGRA reviews SNGPL's annual Revenue Requirement Determination (RRD) petition each fiscal year. In this petition, SNGPL documents its operational costs, capital expenditure requirements, and projected gas distribution volumes. OGRA evaluates these figures against established regulatory benchmarks and holds public hearings (announced in major Pakistani newspapers and OGRA's official website) where consumers, consumer advocacy groups, and other stakeholders can submit written comments and attend in-person proceedings.
+
+After the review process — which typically takes 3–6 months — OGRA issues a tariff determination order that specifies the allowable revenue and resulting tariff rates for the fiscal year. These rates are then implemented across SNGPL's entire service territory, including ${city.name}, simultaneously. Consumers in ${city.name} pay the same per-slab rates as consumers in Lahore, Rawalpindi, Peshawar, or any other SNGPL city — there is no city-by-city differentiation in the domestic tariff structure.
+
+Historically, SNGPL domestic gas tariff rates have been revised upward several times over the past decade as gas import costs (LNG pricing), infrastructure maintenance expenses, and distribution losses have increased. The progressive slab structure has been maintained throughout these revisions to protect low-consumption (low-income) households from the full impact of tariff increases — the lowest slab (0–100 HHM flat Rs. 200) has been the most stable component, while higher slabs have seen proportionally larger per-unit increases.
+
+For ${city.name} consumers wishing to comment on upcoming tariff revisions, OGRA publicly announces the schedule of hearings at ogra.org.pk. Consumer advocacy organizations like the Consumer Rights Commission of Pakistan (CRCP) also file representations at OGRA hearings on behalf of domestic consumers, providing an additional voice beyond individual submissions.`,
+    },
+  );
 
   const howToSteps: HowToStep[] = [
     { name: 'Find Your Consumer Number', text: `Locate your SNGPL consumer number (10–13 digits) on your gas bill under "Consumer No." or "Cust. No." label. If lost, call SNGPL helpline 1199 with your CNIC and address.` },
@@ -355,6 +402,41 @@ The consumer number is different from your meter number. The meter number (usual
     { q: `Is SNGPL consumer number the same as NTN or CNIC?`, a: `No. The SNGPL consumer number is an internal account identifier specific to SNGPL's billing system. It has no relation to your National Tax Number (NTN) or CNIC. SNGPL uses your CNIC for identity verification purposes but your gas account is always referenced by the consumer number.` },
   ];
 
+  sections.push(
+    {
+      h2: `SNGPL Consumer Number Security — Protecting Your Account in ${city.name}`,
+      body: `While your SNGPL consumer number is printed on your gas bill and is technically semi-public (anyone who knows it can check your bill balance), there are important security practices that ${city.name} consumers should follow to prevent unauthorized use of their account information.
+
+Your consumer number enables others to: view your bill amount and consumption history, make payments on your behalf (which could be misused), and check your account status and outstanding dues. It does not, by itself, enable others to: request connection modifications, apply for service disconnection, change account ownership, submit complaints (which require ID verification), or access personal account details beyond billing data.
+
+Safe practices for ${city.name} consumers: (1) Do not post your consumer number on social media or public platforms. (2) If you share it with family members or employees for payment convenience, limit sharing to trusted individuals. (3) Never share your consumer number in response to unsolicited calls or messages claiming to be from SNGPL — SNGPL does not ask for consumer numbers via incoming calls or SMS. (4) If you receive notification of an unexpected payment made to your account, call 1199 to investigate and note any suspicious activity.
+
+Phishing and fraud attempts targeting SNGPL consumers have been reported in ${city.province}. These typically involve fake SMS messages claiming a disconnection notice with a phone number to call (where scammers then request payment to a personal mobile wallet) or fake websites mimicking the SNGPL portal. Always verify you are on the official sngpl.com.pk or billchecker.sngpl.com.pk before entering your information. SNGPL will never ask you to make payments to a personal JazzCash or Easypaisa number — all official payment channels are through the official apps and bank systems.`,
+    },
+    {
+      h2: `Multiple SNGPL Connections — Managing Multiple Consumer Numbers in ${city.name}`,
+      body: `Some ${city.name} residents and property owners manage multiple SNGPL gas connections — for example, a landlord with multiple rental units, a family business with both a home and office connection, or a commercial property developer managing several buildings. Each connection has its own unique consumer number, and managing multiple connections efficiently requires good organization.
+
+The SNGPL Consumer mobile app supports multiple consumer numbers within a single account. After registering with your primary mobile number, you can add additional consumer numbers under the same app profile. This creates a unified dashboard showing all your connections, their current bill amounts, due dates, and payment status at a glance — invaluable for anyone managing 3+ connections in ${city.name}.
+
+For payment purposes, each consumer number must be paid separately — SNGPL does not offer combined billing for multiple connections under a single account owner. However, Easypaisa and JazzCash's "saved billers" feature allows you to store all your consumer numbers and pay them sequentially in minutes without re-entering details.
+
+If you are a tenant in ${city.name} and the gas connection is in your landlord's name, you still need the consumer number (which the landlord should provide) to pay via digital channels or check the bill online. Tenants paying SNGPL bills on behalf of landlords should always retain payment receipts as proof of payment made, particularly for rent deduction agreements where utility payments are deducted from rent.
+
+For property sales and transfers, the outgoing and incoming owners must both be present at ${city.office} for connection transfer. The consumer number changes in some transfer scenarios — always verify the new consumer number after a property purchase in ${city.name} before setting up payment or bill notifications.`,
+    },
+  );
+
+  faqs.push(
+    { q: `How do I change my name on an SNGPL consumer account in ${city.name}?`, a: `Visit ${city.office} with your CNIC (original), the consumer number for the connection, and supporting documents for the name change (e.g., marriage certificate for married women, court order for legal name changes). Complete the name change application form at the customer service counter. The update takes 3–5 working days and reflects on the following month's bill.` },
+    { q: `What documents do I need to transfer an SNGPL connection in ${city.name}?`, a: `For connection transfer (change of account holder), visit ${city.office} with: both parties' original CNICs, the property transfer document (sale deed or no-objection letter from previous owner), the latest paid bill, and a completed transfer application form. Both the old and new account holders may need to be present. Processing takes 2–4 weeks.` },
+    { q: `Is my SNGPL consumer number unique across Pakistan?`, a: `Yes. Each SNGPL consumer number is unique within SNGPL's entire service territory covering Punjab, KPK, Azad Kashmir, and Islamabad. No two connections share the same consumer number. The number encodes your geographic region, distribution circle, and sequential account identifier to ensure uniqueness across the system.` },
+    { q: `Can I request a specific consumer number from SNGPL?`, a: `No. SNGPL assigns consumer numbers automatically based on the geographic region and distribution circle of your connection address in ${city.name}. Consumers cannot choose or request specific numbers. The assigned number stays with the connection for its lifetime.` },
+    { q: `What happens to my consumer number if I renovate or expand my property in ${city.name}?`, a: `Property renovations or expansions generally do not affect your consumer number as long as the connection address and legal registration remain the same. If your renovation involves physically relocating the gas meter or changing the connection point, notify SNGPL at ${city.office} before the work begins. Major infrastructure changes may require a new connection application with a new consumer number.` },
+    { q: `Does the SNGPL app remember my consumer number?`, a: `Yes. After registering on the SNGPL Consumer mobile app with your consumer number and mobile OTP, your consumer number is saved permanently in the app. You can access your bills and account information without re-entering it each time. You can also add multiple consumer numbers under the same app account.` },
+    { q: `Can I find my SNGPL consumer number from my CNIC alone?`, a: `SNGPL can look up your consumer number using your CNIC and connection address, but only through official channels (helpline 1199 or in-person at ${city.office}) where your identity is verified. The portal does not support CNIC-based consumer number lookup — it requires the consumer number itself as input.` },
+  );
+
   const conclusion = `Your SNGPL consumer number is your key to seamless gas bill management in ${city.name}. Keep it saved — in your phone, noted in a safe place, or registered in the SNGPL mobile app — so you always have it available when you need to check your bill, make a payment, or register a service request. If you ever lose it, recovery is straightforward through SNGPL helpline 1199 or a visit to ${city.office}. Remember: never share your consumer number publicly or with unverified parties, as it could be misused to access your account information.`;
 
   return { title, metaDescription, h1, intro, sections, faqs, conclusion };
@@ -487,6 +569,43 @@ ${city.name} consumers across ${city.areas} regularly download duplicate bills b
     { q: `Is the SNGPL portal secure for downloading duplicate bills?`, a: `Yes. billchecker.sngpl.com.pk uses HTTPS encryption. The portal only requires your consumer number (which is already printed on your public utility bill) — it does not ask for CNIC, passwords, or banking details. Your billing data is displayed securely.` },
     { q: `What if the download button on the SNGPL portal is not working?`, a: `Try a different browser (Chrome or Firefox are recommended), clear your browser cache, or use the SNGPL mobile app instead. If the portal itself is down, wait a few hours and try again. The SNGPL helpline 1199 can also email your bill if you request it through the portal's contact mechanism.` },
   ];
+
+  sections.push(
+    {
+      h2: `Legal Validity and Acceptance of SNGPL Duplicate Bills in ${city.name}`,
+      body: `A common concern among ${city.name} consumers is whether a duplicate bill printed from the SNGPL portal or mobile app carries the same legal and practical validity as the original posted bill. The answer is unequivocal: yes, duplicate bills are fully valid for all purposes.
+
+For payment purposes, banks, ATMs, Easypaisa, JazzCash, SNGPL franchise outlets, and bank branch counters all accept duplicate bills — printed from the portal, downloaded from the app, or obtained from an SNGPL SDC. The payment is processed using the consumer number and bill reference information contained in the duplicate, identical to how the original is processed. There is no difference in processing speed or confirmation timeline between paying with an original versus a duplicate bill.
+
+For address verification, duplicate SNGPL bills are accepted by: (1) Pakistani commercial banks for account opening and KYC updates, (2) NADRA for CNIC renewal applications requiring address proof, (3) Federal Board of Revenue for NTN registration, (4) Visa and consulate applications requiring utility bills as address proof — this includes UK, Schengen, USA, Australia, Canada, and other major visa-issuing embassies in Pakistan. A note on physical duplicate bills: for formal legal or government submissions where an officially stamped document may be preferred, obtaining a physically printed and stamped duplicate from ${city.office} provides the highest level of documentary credibility, particularly in cases where a certifying officer may question a home-printed PDF.
+
+For court proceedings or formal dispute documentation, the stamped office copy is recommended. For all other everyday purposes — bank payments, address verification for private transactions, record-keeping — a PDF downloaded from the portal or app is entirely sufficient.`,
+    },
+    {
+      h2: `Bill Archiving Best Practices for ${city.name} SNGPL Consumers`,
+      body: `Maintaining proper records of your SNGPL gas bills is an important consumer practice that protects you in billing disputes, provides address proof when needed, and helps you track your consumption patterns over time. Here are best practices specific to ${city.name} consumers:
+
+**Digital Archiving (Recommended):** Use the SNGPL Consumer mobile app to download each month's bill as a PDF immediately upon generation (you receive a push notification). Create a dedicated folder on your phone or cloud storage (Google Drive, iCloud, Dropbox) labeled "SNGPL Bills" with subfolders by year. Store each bill as "SNGPL-[Month]-[Year]-[ConsumerNo].pdf" for easy retrieval. Keep at least 24 months of bills in your archive — this covers the typical period for disputes, tax assessments, and visa applications.
+
+**Email Archiving:** If you have registered for SNGPL's e-billing service, bills arrive in your email inbox and are automatically archived in your email history. Search "SNGPL" or "gas bill" in your email at any time to retrieve historical bills. Ensure you do not delete these emails, and set up email backup if you use a service that may delete old messages.
+
+**Physical Archiving:** If you receive physical bills and want to maintain paper records, store the last 12 months of bills in a labeled folder in a dry, safe location. For long-term storage, scan bills as PDFs using your phone camera (multiple scanner apps are available free on both Android and iOS) and archive digitally.
+
+**Retention Timeline:** Retain bills for at minimum 2 years for personal reference and dispute protection. For properties involved in rental agreements, retain bills for the duration of the tenancy plus 1 year. For commercial connections in ${city.name}, retain bills for 6 years (consistent with tax record retention requirements under Pakistan tax law). For property sales and transfers, retain the final bill and transfer documentation indefinitely.
+
+**What to Check Each Month:** When you receive or download a new bill, immediately verify: (1) consumer number is correct, (2) billing address matches your connection address, (3) meter readings are plausible (not dramatically higher or lower than last month), (4) amount due is within your expected range. Flag anything unusual immediately — disputes are most effectively resolved when raised within the same billing cycle.`,
+    },
+  );
+
+  faqs.push(
+    { q: `Can a duplicate SNGPL bill be used for bank account opening in ${city.name}?`, a: `Yes. Pakistani commercial banks accept SNGPL duplicate bills (whether portal PDF or office-printed) as valid address proof for account opening, account upgrading, and KYC verification. The bill must show your name and current address. Banks typically require the bill to be from the last 3 months. Some banks may prefer a physically stamped copy from the SNGPL office for stricter KYC requirements — confirm with your specific bank.` },
+    { q: `How do I get an SNGPL bill for a property where I am a tenant, not the owner?`, a: `If the gas connection is in the landlord's name and you need a bill for address proof, ask your landlord for the consumer number. Download the bill from billchecker.sngpl.com.pk using that consumer number. Note that your name will not appear on the bill (the owner's name is shown). For formal address proof, you may need to pair the utility bill with your tenancy agreement. Some institutions accept this combination for address verification.` },
+    { q: `My SNGPL bill shows the wrong address. How do I correct it?`, a: `Visit ${city.office} with your CNIC, the consumer number, ownership documents (if you own the property), and a written correction request. Address corrections are processed within 3–5 working days and reflect on the next generated bill. If you need a corrected bill urgently for documentation purposes, request a manual letter from the SDC confirming the correct address alongside your consumer number.` },
+    { q: `Can I get a certified copy of my SNGPL bill for legal proceedings?`, a: `Yes. Visit ${city.office} with your consumer number and CNIC, and request a "certified duplicate bill" for a specific period. The SDC staff will print the bill and stamp it with the official SNGPL seal. This certified copy carries the same legal weight as the original and is accepted in court proceedings and official legal documentation.` },
+    { q: `How many months of SNGPL bill history can I access online?`, a: `The SNGPL Consumer mobile app typically provides access to the last 12 months of billing history. The web portal (billchecker.sngpl.com.pk) may show only the current or most recent bill. For bills older than 12 months, contact ${city.office} — SNGPL's internal system maintains records for several years and can retrieve older bills upon formal request.` },
+    { q: `Is a screenshot of the SNGPL portal valid as a duplicate bill?`, a: `A screenshot may be sufficient for informal purposes (quick reference, WhatsApp sharing), but for formal documentation (bank, visa, legal), a proper PDF download from billchecker.sngpl.com.pk or the SNGPL app is strongly preferred. Screenshots can be edited and are not accepted as official documents by most formal institutions in ${city.name}.` },
+    { q: `Can I get duplicate bills for all my ${city.name} SNGPL connections in one request?`, a: `Each consumer number must be queried separately — there is no batch download feature for multiple connections. However, the SNGPL mobile app allows switching between saved consumer numbers quickly, making sequential bill downloads faster. If you manage many connections, downloading from the app one by one is the most efficient approach.` },
+  );
 
   const conclusion = `Getting your SNGPL duplicate bill in ${city.name} takes less than a minute through digital channels. The official portal at billchecker.sngpl.com.pk is the fastest option, while the SNGPL mobile app provides the added benefit of bill history access. For formal documentation, the ${city.office} provides physically stamped copies. Whichever method you use, your duplicate bill is official, valid, and ready for payment or submission as address proof.`;
 
@@ -648,6 +767,54 @@ Keep your ATM receipt safe until payment reflects on SNGPL's portal (24–48 hou
     { q: `What is a SNGPL reconnection fee if gas is disconnected in ${city.name}?`, a: `The SNGPL reconnection fee varies by connection type (domestic, commercial, industrial) and may change periodically based on OGRA-approved tariffs. Contact SNGPL helpline 1199 or ${city.office} for the current reconnection fee applicable to your connection type in ${city.name}.` },
     { q: `Can I schedule automatic SNGPL bill payment?`, a: `Some banking apps and Easypaisa offer standing order or auto-pay features for utility bills. Set up auto-payment with your consumer number and a bill cap (maximum amount to auto-pay) to never miss a due date. Check your specific bank's app for this feature.` },
   ];
+
+  sections.push(
+    {
+      h2: `SNGPL ${city.name} Payment Security — Avoiding Fraud and Scams`,
+      body: `With digital gas bill payments becoming the norm in ${city.name}, consumer protection against payment fraud has become increasingly important. SNGPL consumers have reported several types of fraud attempts that ${city.name} residents should be aware of and actively avoid.
+
+**Fake Payment Portals:** Fraudulent websites mimicking the SNGPL bill portal have been created with slight variations in the domain name (e.g., sngpl-billcheck.pk, sngplbill.pk, sngpl-online.pk). Always verify you are on a legitimate SNGPL-related URL. The official SNGPL portal ends in sngpl.com.pk — not .pk alone, not .com, not any other variation. Our site redirects to the official portal so you never land on a fake site through our checker.
+
+**Fake Disconnection SMS:** A common scam involves an SMS message claiming your gas supply will be disconnected "within 24 hours" unless you call a specific number or make a payment to a JazzCash/Easypaisa number. SNGPL never sends disconnection notices via SMS with a personal wallet payment number. Disconnection notices arrive via post or through the official portal. Never call unknown numbers from such SMS messages. Verify your account status directly on billchecker.sngpl.com.pk.
+
+**Fake SNGPL Representatives:** Fraudsters sometimes pose as SNGPL representatives (via phone, WhatsApp, or in-person visits) claiming there is a billing error or meter issue requiring immediate payment to a personal account. SNGPL representatives never collect payments in person to personal accounts — all payments go through official channels (bank, Easypaisa, JazzCash, franchise, ATM). If someone claiming to be SNGPL visits your home requesting payment, ask for their SNGPL ID card, note their name and ID number, and verify by calling 1199 before making any payment.
+
+**Safe Payment Rules for ${city.name} Consumers:**
+1. Only pay through official channels listed in this guide
+2. Never pay SNGPL bills to personal JazzCash or Easypaisa wallet numbers
+3. Always save your payment receipt with transaction reference
+4. Verify your bill amount on billchecker.sngpl.com.pk before paying — if the amount in a payment app differs significantly, do not pay and call 1199 first
+5. Report suspected fraud to SNGPL helpline 1199 and the Federal Investigation Agency (FIA) Cybercrime Wing`,
+    },
+    {
+      h2: `Advance Payments and Credit Balance — SNGPL ${city.name} Account Management`,
+      body: `One underutilized feature of SNGPL's billing system that particularly benefits ${city.name} consumers is the ability to make advance payments — paying more than the current bill amount so that future bills are partially or fully offset by the credit balance.
+
+**Why Make Advance Payments?**
+- **Pre-winter planning:** If you know your ${city.name} household's winter bills run to Rs. 5,000–8,000 per month, making a Rs. 15,000 advance payment in September offsets 2–3 months of winter bills, reducing the financial strain during high-consumption months.
+- **Travel and absences:** If you will be abroad or away from ${city.name} for 1–3 months, an advance payment ensures your connection never falls into arrears and disconnection risk is eliminated.
+- **Financial peace of mind:** Some consumers prefer maintaining a permanent Rs. 1,000–2,000 credit balance so any billing cycle irregularity (missed payment, postal bill loss) does not immediately risk surcharges.
+
+**How Credit Balance Works:**
+Any amount paid in excess of the current bill is recorded as "Advance Payment" or "Overpayment" in SNGPL's system. This credit is applied automatically to the following month's bill, reducing the amount due. If the credit exceeds the next bill, the remaining credit carries forward to the subsequent month.
+
+**Requesting a Cash Refund:**
+If you have accumulated a significant credit balance that you wish to receive as a cash refund rather than a bill credit, submit a formal refund request at ${city.office} with your CNIC and consumer number. SNGPL processes refunds after verifying the credit balance and typically issues a payment within 4–6 weeks. Refunds for small amounts (under Rs. 500) are generally credited to the next bill rather than refunded as cash.
+
+**Checking Your Credit Balance:**
+Your current credit balance (if any) appears on your bill under "Advance/Overpayment" or "Credit Adjustment." It is also visible in the SNGPL Consumer mobile app under your account details. The billchecker.sngpl.com.pk portal may also show the credit when you query your consumer number.`,
+    },
+  );
+
+  faqs.push(
+    { q: `What is the best time of month to pay my SNGPL bill in ${city.name}?`, a: `Pay 2–5 days before the due date printed on your bill. This gives enough buffer for processing (digital payments take 24–48 hours to reflect) while ensuring you have seen your current bill amount. Paying immediately when you receive the bill also eliminates any risk of forgetting or missing the due date.` },
+    { q: `Can I set up auto-pay for my SNGPL ${city.name} bill?`, a: `Some banks (HBL, UBL) and payment apps support standing order or auto-pay for SNGPL bills. Set up auto-pay using your consumer number with a maximum amount cap to ensure you're not overcharged. Alternatively, use the SNGPL app's bill notification feature to receive an alert when your bill is ready, then pay immediately.` },
+    { q: `What if Easypaisa or JazzCash shows a different amount than my SNGPL bill?`, a: `If the amount displayed in Easypaisa or JazzCash after entering your consumer number differs from your printed/downloaded bill amount, do not pay until you verify with SNGPL helpline 1199. The discrepancy could be due to a recently applied credit, updated arrears, or a system sync delay. Always reconcile amounts before confirming payment.` },
+    { q: `Can I pay my SNGPL bill from abroad via an international payment method?`, a: `Pakistan's official SNGPL payment channels (Easypaisa, JazzCash, bank apps) primarily support domestic Pakistani accounts. From abroad, you can: (1) Ask a family member in ${city.name} to pay using your consumer number, (2) Transfer funds to a Pakistani bank account and have the account holder pay, or (3) Use Pakistani fintech apps that accept international top-ups in some cases. SNGPL currently does not support direct international card or PayPal payments.` },
+    { q: `What is a 1-Link network ATM payment for SNGPL?`, a: `Pakistan's 1-Link interbank network connects ATMs of different banks, allowing cross-bank bill payments. This means you can pay your SNGPL ${city.name} bill at any 1-Link-connected ATM regardless of which bank issued your card. Most major Pakistani bank ATMs are 1-Link connected, giving you access to thousands of ATMs across ${city.name} for SNGPL bill payment.` },
+    { q: `Can a minor or someone without a bank account pay my SNGPL bill?`, a: `Yes. Easypaisa's USSD service (*786#) works on any mobile number without a smartphone or bank account — it requires only a Telenor SIM with Easypaisa registration. JazzCash's USSD (*786#) works similarly on Jazz/Warid SIMs. This enables family members without bank accounts to pay SNGPL bills using basic mobile phones, making digital payment accessible even in areas of ${city.name} with low banking penetration.` },
+    { q: `How do I get a GST invoice for my SNGPL ${city.name} payment?`, a: `Your SNGPL gas bill itself serves as a GST invoice — it shows the GST amount (17%) calculated on your bill as a separate line item and includes SNGPL's NTN (National Tax Number) as required for GST documentation. For commercial consumers in ${city.name} who need formal GST invoices for input tax credit claims, contact ${city.office} for a certified bill copy marked with all required tax fields.` },
+  );
 
   const conclusion = `Paying your SNGPL gas bill in ${city.name} is faster and more convenient than ever. With Easypaisa, JazzCash, internet banking, ATMs, and bank branches all supporting SNGPL payments, there is no excuse to miss a due date. Always check your bill on billchecker.sngpl.com.pk before paying to confirm the exact amount, and save your payment receipt until the transaction reflects on SNGPL's system. For any payment issues, the SNGPL helpline at 1199 is available 24/7 and the ${city.office} handles in-person inquiries during working hours.`;
 
@@ -838,6 +1005,59 @@ Do NOT re-enter the building until SNGPL's emergency team has inspected, confirm
     { q: `How do I track my SNGPL complaint status in ${city.name}?`, a: `Log in to selfservice.sngpl.com.pk with your registered account and go to "My Complaints" to see status updates and expected resolution dates. Alternatively, call SNGPL helpline 1199 and provide your complaint reference number for a status update.` },
     { q: `Is there a way to dispute an SNGPL bill without visiting the office in ${city.name}?`, a: `Yes. File your dispute online at selfservice.sngpl.com.pk with a detailed description and attached supporting documents (meter photo, previous bills, payment receipts). You can also call 1199 to initiate a phone complaint. In-person visits are recommended only for complex cases requiring document review or when online/phone resolution fails.` },
   ];
+
+  sections.push(
+    {
+      h2: `SNGPL Consumer Rights in ${city.name} — What You're Entitled To`,
+      body: `As an SNGPL consumer in ${city.name}, you have specific rights protected under Pakistani consumer protection law and OGRA regulations. Understanding these rights empowers you to demand appropriate service levels and resist arbitrary billing or service decisions.
+
+**Right to Accurate Billing:** SNGPL is legally required to bill you based on actual meter readings wherever possible. Estimated readings must be clearly marked on your bill, and excessive reliance on estimation is a violation of service quality standards. You have the right to request an actual meter reading at any time and to have your bill corrected if an estimation was significantly inaccurate.
+
+**Right to Transparent Tariff Information:** SNGPL must apply OGRA-approved tariff rates consistently and transparently. Every charge on your bill must correspond to an approved tariff or government levy. Unauthorized charges, or charges that differ from the OGRA-published tariff, are grounds for a formal billing dispute.
+
+**Right to Timely Complaint Resolution:** OGRA's service quality standards require SNGPL to resolve standard billing complaints within 14 working days and emergency service issues (gas leakage, reconnection after wrongful disconnection) within 24–48 hours. If SNGPL fails to resolve your complaint within these timeframes, you have the right to escalate to OGRA without SNGPL's permission.
+
+**Right to a Written Explanation:** For any billing dispute or disconnection, you can request a written explanation from SNGPL detailing the basis for the charge or action. SNGPL is obligated to provide this upon written request. Keep copies of all written communications for your records.
+
+**Right to Reconnection After Wrongful Disconnection:** If your gas is disconnected despite your account being current (all bills paid, no violations), SNGPL must reconnect you within 24 hours of confirmation without charging a reconnection fee. Document the disconnection thoroughly (photos, date/time, consumer number) and call 1199 immediately.
+
+**Right to OGRA Escalation:** After exhausting SNGPL's internal complaint mechanisms, every consumer has the right to file a complaint with OGRA at ogra.org.pk or OGRA's helpline. OGRA is mandated to acknowledge your complaint within 5 working days and take action within 30 working days for standard issues.`,
+    },
+    {
+      h2: `New Gas Connection Application in ${city.name} — Step-by-Step Process`,
+      body: `If your property in ${city.name} currently lacks a gas connection or you are moving to a new address that needs one, here is the complete process to apply for a new SNGPL connection:
+
+**Step 1: Verify Feasibility**
+Contact SNGPL helpline 1199 or visit ${city.office} to confirm that your specific address in ${city.name} falls within SNGPL's service territory and that the local gas distribution main has available capacity. Some areas on the outskirts of ${city.name} or in newly developed housing schemes may have limited capacity or pending infrastructure completion.
+
+**Step 2: Gather Required Documents**
+You will need: (1) Original CNIC of the applicant (property owner or authorized representative), (2) Proof of property ownership (registered sale deed, inheritance certificate) or tenancy agreement with owner's CNIC, (3) A site sketch/map showing the property location and nearest gas pipeline, and (4) Completed new connection application form (available at the SDC or downloadable from sngpl.com.pk).
+
+**Step 3: Submit Application and Fee**
+Submit all documents and the application form at ${city.office} and pay the applicable new connection fee. Fee amounts vary by: distance from the nearest gas main, connection size (diameter of service pipe required), and connection type (domestic/commercial). The SDC staff will calculate the exact fee at the time of application.
+
+**Step 4: Site Survey**
+SNGPL's technical team conducts a site survey at your ${city.name} address within 10–20 working days of application submission. This survey assesses the route for the service pipe from the main distribution line to your meter location, any infrastructure work required, and confirms the feasibility and cost estimate.
+
+**Step 5: Demand Notice and Work Order**
+After the survey, SNGPL issues a demand notice specifying any additional charges for special work (road cutting, long service pipe runs, etc.). After you pay the demand notice amount, SNGPL issues a work order for meter and service installation.
+
+**Step 6: Installation and Consumer Number Assignment**
+SNGPL's installation team completes the pipeline work and meter installation. After successful pressure testing and safety verification, your connection is activated and your unique consumer number is assigned. The first bill arrives the following month.
+
+Timeline estimate for ${city.name}: 4–10 weeks from application to active connection for standard cases. Complex installations (long service pipe runs, road cuts) may take up to 3–4 months.`,
+    },
+  );
+
+  faqs.push(
+    { q: `What are SNGPL's service quality benchmarks for ${city.name}?`, a: `OGRA sets service quality benchmarks that SNGPL must meet: billing complaints resolved within 14 working days, new connection installations completed within 60 days of demand notice payment, meter inspections conducted within 14 working days of request, gas pressure maintained above minimum threshold during normal supply hours, and 24/7 emergency response availability. These benchmarks apply uniformly in ${city.name} and all other SNGPL cities.` },
+    { q: `What happens if SNGPL damages my property during installation or maintenance in ${city.name}?`, a: `If SNGPL's installation or maintenance activities cause damage to your property (floor tiles, walls, landscaping), you can file a compensation claim at ${city.office}. Document the damage with photographs before and after, and keep all repair cost receipts. Submit a written claim with evidence. SNGPL has a standard compensation process for property damage caused during official work.` },
+    { q: `My SNGPL bill shows charges I do not recognize. What do I do?`, a: `For any unrecognized charge on your ${city.name} SNGPL bill, first compare it to the standard bill components (fixed charge, consumption charge, GIDC, GST, meter rent, arrears). If a charge does not match any standard component, call SNGPL helpline 1199 and ask for an itemized explanation. Document the specific charge description and amount as shown on your bill before calling.` },
+    { q: `Can I request a meter test to verify my SNGPL meter accuracy in ${city.name}?`, a: `Yes. If you believe your gas meter is running fast (recording more consumption than actual), you can formally request a meter accuracy test at ${city.office} or through SNGPL helpline 1199. SNGPL charges a nominal fee for this test. If the test reveals the meter is inaccurate beyond the allowed tolerance, SNGPL replaces the meter and adjusts your bills for the affected period at no cost.` },
+    { q: `How do I report illegal gas connections in my area in ${city.name}?`, a: `If you suspect unauthorized gas connections (theft from the main supply) in your neighborhood in ${city.name}, report it to SNGPL helpline 1199 or visit ${city.office}. Gas theft increases distribution losses and can reduce pressure for legitimate consumers in the area. SNGPL takes these reports seriously and investigates. Reports can be made anonymously.` },
+    { q: `What is a SNGPL demand notice and how is it different from a bill?`, a: `A regular SNGPL bill is your monthly billing statement for gas consumed. A demand notice is a special notice requiring payment for specific reasons beyond normal billing: penalty for gas theft, cost of new connection infrastructure, cost of meter replacement due to consumer damage, or restoration fees after unauthorized reconnection. Demand notices must be paid separately from your regular bill and within the specified timeframe to avoid legal action.` },
+    { q: `How do I apply for subsidized SNGPL connection under any government scheme in ${city.name}?`, a: `SNGPL periodically runs subsidized connection programs under government initiatives (such as the PM's gas connection scheme or low-income household programs). These programs have specific eligibility criteria based on income level and property type. Monitor sngpl.com.pk, ${city.office} notice boards, and local media for announcement of any active subsidy programs in ${city.name}. When a scheme is active, apply promptly as allocations are typically limited.` },
+  );
 
   const conclusion = `Resolving SNGPL service issues in ${city.name} is straightforward when you know the right channels and steps. For billing disputes, gather your evidence and file through selfservice.sngpl.com.pk or 1199. For disconnection, immediate payment and a follow-up call to 1199 is the fastest path to reconnection. For meter problems, document and report — SNGPL is obligated to inspect and correct. For gas emergencies, evacuate first and call 1199 from a safe distance. The ${city.office} handles all in-person matters during business hours. Stay proactive: check your bill every month on billchecker.sngpl.com.pk and act on any irregularity immediately rather than waiting.`;
 
