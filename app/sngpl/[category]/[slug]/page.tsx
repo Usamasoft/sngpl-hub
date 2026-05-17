@@ -21,9 +21,9 @@ export const dynamic = 'force-static';
 export const dynamicParams = true;
 export const revalidate = 86400; // 24-hour ISR
 
-// ─── STATIC PARAMS (top 200 pre-built at deploy) ─────────────────
+// ─── STATIC PARAMS (top 400 pre-built at deploy) ─────────────────
 export async function generateStaticParams() {
-  return getTopStaticParams(200);
+  return getTopStaticParams(400);
 }
 
 // ─── METADATA ────────────────────────────────────────────────────

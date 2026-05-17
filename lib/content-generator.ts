@@ -5,6 +5,7 @@
 
 import type { CityData, Category } from './seo-data';
 import { getCategoryLabel, getTypeLabel } from './seo-data';
+import { getTypeFocusSection } from './type-sections';
 
 export interface PageContent {
   title: string;
@@ -254,6 +255,7 @@ For ${city.name} consumers wishing to comment on upcoming tariff revisions, OGRA
 
   const conclusion = `Checking your SNGPL gas bill in ${city.name} is a straightforward process that takes under a minute with the right tools. Whether you use the official portal, the SNGPL mobile app, WhatsApp, or SMS, your bill information is always accessible. Keep your consumer number saved — it is your primary identifier for all SNGPL services in ${city.name}. For billing disputes or service issues, the ${city.office} and the 24/7 helpline at 1199 are your best resources. Set a monthly reminder to check your bill before the due date to avoid late payment surcharges and maintain an uninterrupted gas supply.`;
 
+  sections.unshift(getTypeFocusSection(type, city, 'bill-check'));
   return { title, metaDescription, h1, intro, sections, faqs, conclusion, howToSteps };
 }
 
@@ -439,6 +441,7 @@ For property sales and transfers, the outgoing and incoming owners must both be 
 
   const conclusion = `Your SNGPL consumer number is your key to seamless gas bill management in ${city.name}. Keep it saved — in your phone, noted in a safe place, or registered in the SNGPL mobile app — so you always have it available when you need to check your bill, make a payment, or register a service request. If you ever lose it, recovery is straightforward through SNGPL helpline 1199 or a visit to ${city.office}. Remember: never share your consumer number publicly or with unverified parties, as it could be misused to access your account information.`;
 
+  sections.unshift(getTypeFocusSection(type, city, 'consumer-number'));
   return { title, metaDescription, h1, intro, sections, faqs, conclusion };
 }
 
@@ -609,6 +612,7 @@ For court proceedings or formal dispute documentation, the stamped office copy i
 
   const conclusion = `Getting your SNGPL duplicate bill in ${city.name} takes less than a minute through digital channels. The official portal at billchecker.sngpl.com.pk is the fastest option, while the SNGPL mobile app provides the added benefit of bill history access. For formal documentation, the ${city.office} provides physically stamped copies. Whichever method you use, your duplicate bill is official, valid, and ready for payment or submission as address proof.`;
 
+  sections.unshift(getTypeFocusSection(type, city, 'duplicate-bill'));
   return { title, metaDescription, h1, intro, sections, faqs, conclusion, howToSteps: [
     { name: 'Locate Your Consumer Number', text: `Find your 10–13 digit SNGPL consumer number on any previous bill or your meter card near your gas meter.` },
     { name: 'Visit SNGPL Bill Portal', text: `Go to billchecker.sngpl.com.pk in any web browser.` },
@@ -818,6 +822,7 @@ Your current credit balance (if any) appears on your bill under "Advance/Overpay
 
   const conclusion = `Paying your SNGPL gas bill in ${city.name} is faster and more convenient than ever. With Easypaisa, JazzCash, internet banking, ATMs, and bank branches all supporting SNGPL payments, there is no excuse to miss a due date. Always check your bill on billchecker.sngpl.com.pk before paying to confirm the exact amount, and save your payment receipt until the transaction reflects on SNGPL's system. For any payment issues, the SNGPL helpline at 1199 is available 24/7 and the ${city.office} handles in-person inquiries during working hours.`;
 
+  sections.unshift(getTypeFocusSection(type, city, 'payment'));
   return { title, metaDescription, h1, intro, sections, faqs, conclusion, howToSteps: [
     { name: 'Check Your Bill Amount', text: `Visit billchecker.sngpl.com.pk and enter your consumer number to confirm the exact bill amount and due date.` },
     { name: 'Choose Your Payment Method', text: `Select Easypaisa, JazzCash, internet banking, ATM, or bank branch based on your preference.` },
@@ -1061,6 +1066,7 @@ Timeline estimate for ${city.name}: 4–10 weeks from application to active conn
 
   const conclusion = `Resolving SNGPL service issues in ${city.name} is straightforward when you know the right channels and steps. For billing disputes, gather your evidence and file through selfservice.sngpl.com.pk or 1199. For disconnection, immediate payment and a follow-up call to 1199 is the fastest path to reconnection. For meter problems, document and report — SNGPL is obligated to inspect and correct. For gas emergencies, evacuate first and call 1199 from a safe distance. The ${city.office} handles all in-person matters during business hours. Stay proactive: check your bill every month on billchecker.sngpl.com.pk and act on any irregularity immediately rather than waiting.`;
 
+  sections.unshift(getTypeFocusSection(type, city, 'troubleshooting'));
   return { title, metaDescription, h1, intro, sections, faqs, conclusion };
 }
 

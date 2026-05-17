@@ -86,6 +86,7 @@ export const SLUG_TYPES: Record<Category, string[]> = {
     'current-month-bill','last-month-bill','billing-cycle','meter-reading','consumption-bill',
     'online-portal','gas-meter-bill','residential-gas-bill','commercial-gas-bill',
     'industrial-gas-bill','quarterly-bill','domestic-gas-bill','sngpl-online-bill','gas-account-bill',
+    'gas-bill-status','next-bill-estimate',
   ],
   'consumer-number': [
     'find-consumer-number','locate-consumer-number','consumer-number-format',
@@ -123,6 +124,7 @@ export const SLUG_TYPES: Record<Category, string[]> = {
     'internet-banking','mobile-banking','easypaisa-guide','jazzcash-guide',
     'avoid-disconnection','pay-before-due','gas-bill-payment','sngpl-payment',
     'pay-card','failed-payment','missing-payment','payment-confirmation-check',
+  'auto-payment-sngpl',
   ],
   'troubleshooting': [
     'bill-not-available','website-error','wrong-amount','consumer-number-error',
@@ -166,10 +168,10 @@ export function parseSlug(category: Category, slug: string): { city: CityData; t
   return null;
 }
 
-export function getTopStaticParams(limit = 200): { category: string; slug: string }[] {
-  // Pre-build top pages: first 4 cities × all types for first 2 categories
+export function getTopStaticParams(limit = 400): { category: string; slug: string }[] {
+  // Pre-build top 400 pages: 10 cities × 8 types × 5 categories
   const results: { category: string; slug: string }[] = [];
-  const topCities = CITIES.slice(0, 5);
+  const topCities = CITIES.slice(0, 10);
   for (const cat of CATEGORIES) {
     for (const city of topCities) {
       for (const type of (SLUG_TYPES[cat] ?? []).slice(0, 8)) {
