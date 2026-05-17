@@ -4,7 +4,7 @@ import AdUnit from '../components/AdUnit';
 
 export const metadata: Metadata = {
   title: 'SNGPL Guides — Consumer Number, Duplicate Bill, Payment & More',
-  description: 'Complete SNGPL guides: consumer number, duplicate bill, online payment, troubleshooting. Step-by-step guides for every SNGPL service.',
+  description: 'Complete SNGPL guides: consumer number, duplicate bill download, online payment & troubleshooting. Free step-by-step guides for every SNGPL service.',
   alternates: { canonical: 'https://sngplbillcheck.pk/guides' },
 };
 

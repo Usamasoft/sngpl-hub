@@ -4,9 +4,19 @@ import BillChecker from '../components/BillChecker';
 import AdUnit from '../components/AdUnit';
 
 export const metadata: Metadata = {
-  title: 'SNGPL Bill Check Online 2024 — Step-by-Step Complete Guide',
-  description: 'How to check SNGPL gas bill online using consumer number. Desktop, mobile, and app methods. Common errors, bill components, FAQs — complete guide.',
+  title: 'SNGPL Bill Check Online 2025 — Step-by-Step Complete Guide',
+  description: 'How to check SNGPL gas bill online using consumer number. Desktop, mobile, app methods explained. Bill components, common errors & FAQs — full guide.',
   alternates: { canonical: 'https://sngplbillcheck.pk/bill-check' },
+  openGraph: {
+    title: 'SNGPL Bill Check Online 2025 — Complete Step-by-Step Guide',
+    description: 'How to check SNGPL gas bill online using consumer number. Desktop, mobile, app methods. Bill components, FAQs — complete free guide.',
+    url: 'https://sngplbillcheck.pk/bill-check',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SNGPL Bill Check Online 2025 — Complete Guide',
+    description: 'Check your SNGPL gas bill online. Desktop, mobile, app methods + FAQs. Free Pakistan gas bill guide.',
+  },
 };
 
 const tocItems = [

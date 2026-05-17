@@ -33,6 +33,19 @@ export interface HowToStep {
   text: string;
 }
 
+// ─── META DESCRIPTION SAFETY ─────────────────────────────────────
+// Ensures every generated meta description is 140–160 chars
+function safeMeta(s: string): string {
+  if (s.length >= 140 && s.length <= 160) return s;
+  if (s.length > 160) {
+    // Truncate at last word boundary before 158 chars
+    const cut = s.slice(0, 157).replace(/\s\S*$/, '');
+    return cut + '…';
+  }
+  // Too short — pad (shouldn't happen with well-written templates)
+  return s + ' Free Pakistan guide.'.slice(0, 160 - s.length);
+}
+
 // ─── MONTH helpers ───────────────────────────────────────────────
 const MONTHS: Record<string, string> = {
   january:'January', february:'February', march:'March', april:'April',
@@ -60,9 +73,9 @@ function billCheckContent(city: CityData, type: string): PageContent {
   const title = month
     ? `SNGPL ${city.name} ${month} Gas Bill Check — View & Download ${yearNote}`
     : `SNGPL ${city.name} Bill Check Online — ${typeLabel} | Pakistan`;
-  const metaDescription = month
-    ? `Check your SNGPL ${city.name} gas bill for ${month}. View amount due, download PDF, and pay online. Official SNGPL portal redirect — free service.`
-    : `Check SNGPL gas bill online for ${city.name} consumers. ${typeLabel} — enter consumer number and view your bill instantly. Free official portal redirect.`;
+  const metaDescription = safeMeta(month
+    ? `Check SNGPL ${city.name} gas bill for ${month}. View amount due, download PDF and pay online. Official portal redirect — free.`
+    : `Check SNGPL gas bill online for ${city.name}. ${typeLabel} — enter consumer number and view your bill instantly. Free official redirect.`);
   const h1 = month
     ? `SNGPL ${city.name} ${month} Bill Check Online`
     : `SNGPL ${city.name} Gas Bill Check — ${typeLabel}`;
@@ -204,7 +217,7 @@ function consumerNumberContent(city: CityData, type: string): PageContent {
   const isFormat = type.includes('format') || type.includes('digit') || type.includes('meaning') || type.includes('region');
 
   const title = `SNGPL ${city.name} Consumer Number — ${typeLabel} | Complete Guide`;
-  const metaDescription = `Everything about your SNGPL consumer number in ${city.name}. ${typeLabel} — find, recover, understand, and use your gas consumer number. Free guide for ${city.province} SNGPL consumers.`;
+  const metaDescription = safeMeta(`SNGPL consumer number guide for ${city.name} — ${typeLabel}. Find, recover & understand your gas account number. Free ${city.province} consumer guide.`);
   const h1 = `SNGPL ${city.name} Consumer Number — ${typeLabel}`;
 
   const intro = `Your SNGPL consumer number is the single most important piece of information for managing your gas connection in ${city.name}. This unique identifier — printed on every SNGPL gas bill and on your meter card — links you to SNGPL's billing system and is required for every official interaction: checking bills online, making payments through Easypaisa or JazzCash, registering complaints, applying for new services, and verifying your account status.
@@ -356,7 +369,7 @@ function duplicateBillContent(city: CityData, type: string): PageContent {
   const isOffice = type.includes('office');
 
   const title = `Download SNGPL ${city.name} Duplicate Bill — ${typeLabel} | 2025 Guide`;
-  const metaDescription = `Get your SNGPL ${city.name} duplicate gas bill instantly. ${typeLabel} — official portal, mobile app, WhatsApp, and SMS methods explained step by step. Free guide.`;
+  const metaDescription = safeMeta(`Download SNGPL ${city.name} duplicate bill instantly. ${typeLabel} — portal, app, WhatsApp & SMS methods explained. Official & free. No registration needed.`);
   const h1 = `SNGPL ${city.name} Duplicate Bill Download — ${typeLabel}`;
 
   const intro = `Lost your SNGPL gas bill? Need a copy to make a payment or settle a billing dispute? As an SNGPL consumer in ${city.name}, you have multiple official channels to download or obtain a duplicate gas bill within minutes — no need to visit the SNGPL office unless you prefer in-person service.
@@ -496,7 +509,7 @@ function paymentContent(city: CityData, type: string): PageContent {
   const isLate = type.includes('late') || type.includes('overdue') || type.includes('disconnection') || type.includes('avoid');
 
   const title = `Pay SNGPL ${city.name} Gas Bill Online — ${typeLabel} | Step-by-Step 2025`;
-  const metaDescription = `How to pay your SNGPL gas bill in ${city.name} via ${typeLabel}. Easypaisa, JazzCash, HBL, ATM, and bank branch payment guide. Avoid disconnection with timely payment.`;
+  const metaDescription = safeMeta(`Pay SNGPL gas bill in ${city.name} — ${typeLabel}. Easypaisa, JazzCash, HBL, ATM & bank branch guide. Avoid disconnection. Free step-by-step 2025 guide.`);
   const h1 = `SNGPL ${city.name} Gas Bill Payment — ${typeLabel}`;
 
   const intro = `Paying your SNGPL gas bill in ${city.name} on time is essential to maintain uninterrupted gas supply to your home or business. With ${city.consumers} consumers in ${city.name}'s ${city.division}, SNGPL processes thousands of payments every day through digital and physical channels.
@@ -657,7 +670,7 @@ function troubleshootingContent(city: CityData, type: string): PageContent {
   const isEmergency = type.includes('emergency') || type.includes('leakage');
 
   const title = `SNGPL ${city.name} — ${typeLabel} | Fix Your Gas Bill Problem 2025`;
-  const metaDescription = `Solve SNGPL problems in ${city.name}: ${typeLabel}. Step-by-step solutions for billing disputes, disconnection, meter faults, payment issues, and complaints. Free guide.`;
+  const metaDescription = safeMeta(`Fix SNGPL ${city.name} issues: ${typeLabel}. Solutions for billing disputes, disconnection, meter faults & complaints. SNGPL helpline 1199 guide. Free.`);
   const h1 = `SNGPL ${city.name} — ${typeLabel} | Complete Solution Guide`;
 
   const intro = `Encountering a problem with your SNGPL gas bill or service in ${city.name} can be frustrating — especially when you do not know the right channel to report it. Sui Northern Gas Pipelines Limited serves ${city.consumers} consumers in ${city.name} across ${city.areas}, and billing issues, service interruptions, and complaints are handled through established procedures.

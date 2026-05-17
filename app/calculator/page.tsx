@@ -4,9 +4,19 @@ import AdUnit from '../components/AdUnit';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'SNGPL Gas Bill Calculator 2024 — Estimate Monthly Bill Online',
-  description: 'Calculate your SNGPL gas bill instantly. Enter HHM units or meter readings — see full breakdown with GST, GIDC and slab rates. Free online tool.',
+  title: 'SNGPL Gas Bill Calculator 2025 — Estimate Monthly Bill Online',
+  description: 'Calculate your SNGPL gas bill instantly. Enter HHM units or meter readings — full breakdown with GST, GIDC and slab rates. Free online tool 2025.',
   alternates: { canonical: 'https://sngplbillcheck.pk/calculator' },
+  openGraph: {
+    title: 'SNGPL Gas Bill Calculator 2025 — Estimate Monthly Gas Bill',
+    description: 'Free SNGPL gas bill calculator. Enter HHM units or meter readings for a full breakdown with GST, GIDC, and OGRA slab rates.',
+    url: 'https://sngplbillcheck.pk/calculator',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SNGPL Gas Bill Calculator 2025',
+    description: 'Estimate your SNGPL gas bill. Enter HHM units, see full breakdown with slabs, GIDC & GST. Free tool.',
+  },
 };
 
 const faqItems = [

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import AdUnit from '../../../components/AdUnit';
 import BillChecker from '../../../components/BillChecker';
+import TableOfContents from '../../../components/TableOfContents';
 import {
   CATEGORIES,
   parseSlug,
@@ -50,6 +51,11 @@ export async function generateMetadata({
       siteName: 'SNGPL Bill Check Hub',
       locale: 'en_PK',
       type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: content.title,
+      description: content.metaDescription,
     },
   };
 }
@@ -159,15 +165,26 @@ export default async function ProgrammaticPage({
           <article className="prose-content min-w-0">
 
             {/* Intro */}
-            <div className="mb-10">
+            <div className="mb-6">
               {content.intro.split('\n\n').map((para, i) => (
                 <p key={i} className="text-gray-700 leading-relaxed mb-4 text-base">{para}</p>
               ))}
             </div>
 
+            {/* Table of Contents */}
+            <TableOfContents items={[
+              ...content.sections.map((s, i) => ({
+                id: `section-${i}`,
+                label: s.h2,
+              })),
+              ...(content.howToSteps ? [{ id: 'steps', label: 'Quick Step-by-Step Summary' }] : []),
+              { id: 'summary', label: 'Summary' },
+              { id: 'faq', label: 'Frequently Asked Questions' },
+            ]} />
+
             {/* Sections */}
             {content.sections.map((section, si) => (
-              <section key={si} className="mb-10">
+              <section key={si} id={`section-${si}`} className="mb-10">
                 <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
                   {section.h2}
                 </h2>
@@ -202,7 +219,7 @@ export default async function ProgrammaticPage({
 
             {/* HowTo Steps (if applicable) */}
             {content.howToSteps && content.howToSteps.length > 0 && (
-              <section className="mb-10">
+              <section id="steps" className="mb-10">
                 <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
                   Quick Step-by-Step Summary
                 </h2>
@@ -223,7 +240,7 @@ export default async function ProgrammaticPage({
             )}
 
             {/* Conclusion */}
-            <section className="mb-10">
+            <section id="summary" className="mb-10">
               <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
                 <h2 className="text-lg font-bold text-blue-900 mb-3">Summary</h2>
                 <p className="text-blue-800 text-sm leading-relaxed">{content.conclusion}</p>
