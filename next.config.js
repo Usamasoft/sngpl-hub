@@ -4,12 +4,9 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
-  // Skip TypeScript & ESLint checks on Vercel — we verify locally
+  // Skip TypeScript checks — we verify locally
   typescript: {
     ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
 
   images: {
