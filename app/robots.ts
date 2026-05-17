@@ -3,7 +3,10 @@ import { MetadataRoute } from 'next';
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: '*', allow: '/', disallow: ['/api/', '/_next/'] }],
-    sitemap: 'https://sngplbillcheck.pk/sitemap.xml',
-    host:    'https://sngplbillcheck.pk',
+    sitemap: [
+      'https://sngplbillcheck.pk/sitemap.xml',
+      'https://sngplbillcheck.pk/sitemap-index',
+    ],
+    host: 'https://sngplbillcheck.pk',
   };
 }

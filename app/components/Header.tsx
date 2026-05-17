@@ -3,11 +3,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const nav = [
-  { href: '/',                           label: 'Home' },
-  { href: '/sngpl-bill-check-online',    label: 'Bill Check Guide' },
-  { href: '/sngpl-consumer-number-guide',label: 'Consumer Number' },
-  { href: '/sngpl-duplicate-bill',       label: 'Duplicate Bill' },
-  { href: '/gas-bill-calculator',        label: 'Calculator' },
+  { href: '/',            label: 'Home' },
+  { href: '/bill-check',  label: 'Bill Check' },
+  { href: '/guides',      label: 'Guides' },
+  { href: '/calculator',  label: 'Calculator' },
 ];
 
 export default function Header() {

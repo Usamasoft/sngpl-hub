@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import SNGPLChecker from './components/SNGPLChecker';
+import BillChecker from './components/BillChecker';
 import AdUnit from './components/AdUnit';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ const features = [
 
 const quickLinks = [
   {
-    href: '/sngpl-bill-check-online',
+    href: '/bill-check',
     icon: '🔍',
     title: 'SNGPL Bill Check Guide',
     desc: 'Complete step-by-step guide to check your SNGPL gas bill online with screenshots',
@@ -29,15 +29,15 @@ const quickLinks = [
     badgeColor: 'bg-blue-100 text-blue-700',
   },
   {
-    href: '/sngpl-consumer-number-guide',
-    icon: '🔢',
-    title: 'Consumer Number Guide',
-    desc: 'Find your SNGPL consumer number — where it is, what it means, and how to use it',
+    href: '/guides',
+    icon: '📚',
+    title: 'Consumer & Duplicate Guides',
+    desc: 'Find consumer number, download duplicate bills, understand your gas bill components',
     badge: 'Essential',
     badgeColor: 'bg-green-100 text-green-700',
   },
   {
-    href: '/sngpl-duplicate-bill',
+    href: '/guides#duplicate',
     icon: '📄',
     title: 'Download Duplicate Bill',
     desc: 'How to download and print a duplicate SNGPL gas bill — online, app, and WhatsApp methods',
@@ -45,7 +45,7 @@ const quickLinks = [
     badgeColor: 'bg-purple-100 text-purple-700',
   },
   {
-    href: '/gas-bill-calculator',
+    href: '/calculator',
     icon: '🧮',
     title: 'Gas Bill Calculator',
     desc: 'Estimate your SNGPL gas bill using current slab rates and meter readings',
@@ -97,7 +97,7 @@ export default function HomePage() {
                 <Link href="#checker" className="btn-secondary bg-white text-blue-700 border-white hover:bg-blue-50 py-3.5 px-7 text-base">
                   Check Bill Now ↓
                 </Link>
-                <Link href="/gas-bill-calculator" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition-all text-base">
+                <Link href="/calculator" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition-all text-base">
                   🧮 Calculator
                 </Link>
               </div>
@@ -112,7 +112,7 @@ export default function HomePage() {
             </div>
             {/* Checker widget */}
             <div className="animate-fade-in">
-              <SNGPLChecker />
+              <BillChecker />
             </div>
           </div>
         </div>

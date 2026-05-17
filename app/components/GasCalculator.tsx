@@ -1,180 +1,190 @@
 'use client';
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 
-// SNGPL Residential Slab Rates 2024-25 (approximate)
+// SNGPL OGRA-approved domestic slab rates (2024-25)
 const SLABS = [
-  { label: '0 – 1 HHM',   max: 1,        rate: 200  },
-  { label: '1 – 2 HHM',   max: 2,        rate: 400  },
-  { label: '2 – 3 HHM',   max: 3,        rate: 600  },
-  { label: '3 – 4 HHM',   max: 4,        rate: 800  },
-  { label: 'Above 4 HHM', max: Infinity, rate: 1200 },
+  { min: 0,    max: 100,  rate: 0,   label: '0–100 HHM (Flat Rs. 200)' },
+  { min: 101,  max: 300,  rate: 130, label: '101–300 HHM @ Rs. 130/HHM' },
+  { min: 301,  max: 500,  rate: 150, label: '301–500 HHM @ Rs. 150/HHM' },
+  { min: 501,  max: 800,  rate: 170, label: '501–800 HHM @ Rs. 170/HHM' },
+  { min: 801,  max: 1200, rate: 200, label: '801–1200 HHM @ Rs. 200/HHM' },
+  { min: 1201, max: 99999,rate: 250, label: '1201+ HHM @ Rs. 250/HHM' },
 ];
-const FIXED_CHARGE  = 100;
-const GST_RATE      = 0.17;
-const INFRA_RATE    = 0.05;
+const GST_RATE  = 0.17;
+const GIDC_RATE = 0.10;
 
-function calc(hhm: number) {
-  let energy = 0, prev = 0;
-  for (const s of SLABS) {
-    if (hhm <= prev) break;
-    const consumed = Math.min(hhm, s.max) - prev;
-    energy += consumed * s.rate;
-    prev = s.max;
+function calcBill(hhm: number) {
+  const breakdown: { label: string; units: number; amount: number }[] = [];
+  let variable = 0;
+
+  if (hhm <= 100) {
+    breakdown.push({ label: '0–100 HHM (Flat Rate)', units: hhm, amount: 0 });
+  } else {
+    for (const s of SLABS) {
+      if (s.min === 0) continue;
+      if (hhm < s.min) break;
+      const inSlab = Math.min(hhm, s.max) - s.min + 1;
+      if (inSlab <= 0) continue;
+      const amount = inSlab * s.rate;
+      variable += amount;
+      breakdown.push({ label: s.label, units: inSlab, amount });
+      if (hhm <= s.max) break;
+    }
   }
-  const fixed  = FIXED_CHARGE;
-  const infra  = energy * INFRA_RATE;
-  const sub    = energy + fixed + infra;
-  const gst    = sub * GST_RATE;
-  const total  = sub + gst;
-  return { energy, fixed, infra, gst, total };
+
+  const fixed   = hhm <= 100 ? 200 : 50;
+  const base    = fixed + variable;
+  const gidc    = Math.round(base * GIDC_RATE);
+  const gst     = Math.round((base + gidc) * GST_RATE);
+  const total   = base + gidc + gst;
+  return { hhm, fixed, variable, gidc, gst, total, breakdown };
 }
 
-const fmt = (n: number) => `PKR ${Math.round(n).toLocaleString('en-PK')}`;
+const fmt = (n: number) => 'Rs. ' + Math.round(n).toLocaleString('en-PK');
 
 export default function GasCalculator() {
-  const [hhm, setHhm]         = useState('');
-  const [prev, setPrev]       = useState('');
-  const [curr, setCurr]       = useState('');
-  const [mode, setMode]       = useState<'hhm' | 'meter'>('hhm');
-  const [result, setResult]   = useState<ReturnType<typeof calc> | null>(null);
-  const [err, setErr]         = useState('');
-  const [activeHhm, setActive]= useState<number | null>(null);
+  const [mode, setMode]     = useState<'hhm' | 'reading'>('hhm');
+  const [hhm, setHhm]       = useState('');
+  const [prev, setPrev]     = useState('');
+  const [curr, setCurr]     = useState('');
+  const [result, setResult] = useState<ReturnType<typeof calcBill> | null>(null);
+  const [err, setErr]       = useState('');
 
-  const compute = useCallback(() => {
-    let h = 0;
+  const run = () => {
+    setErr(''); setResult(null);
+    let units = 0;
     if (mode === 'hhm') {
-      h = parseFloat(hhm);
-      if (!hhm || isNaN(h) || h <= 0) { setErr('Please enter valid HHM consumption.'); return; }
-      if (h > 200) { setErr('HHM value seems too high.'); return; }
+      units = Number(hhm);
+      if (!hhm || isNaN(units) || units < 0) { setErr('Enter a valid HHM value (e.g. 200).'); return; }
     } else {
-      const p = parseFloat(prev), c = parseFloat(curr);
-      if (isNaN(p) || isNaN(c) || c <= p) { setErr('Current reading must be greater than previous.'); return; }
-      h = (c - p) / 100;
+      const p = Number(prev), c = Number(curr);
+      if (!prev || !curr || isNaN(p) || isNaN(c)) { setErr('Enter both meter readings.'); return; }
+      if (c <= p) { setErr('Current reading must be higher than previous.'); return; }
+      units = c - p;
     }
-    setErr('');
-    setActive(h);
-    setResult(calc(h));
-  }, [hhm, prev, curr, mode]);
+    if (units > 9999) { setErr('Value too high — please double-check.'); return; }
+    setResult(calcBill(units));
+  };
+
+  const hhmVal = mode === 'reading' && prev && curr && Number(curr) > Number(prev)
+    ? Number(curr) - Number(prev) : null;
 
   return (
-    <div className="max-w-2xl mx-auto">
-      {/* Mode toggle */}
-      <div className="flex bg-gray-100 rounded-2xl p-1 mb-6">
-        {(['hhm', 'meter'] as const).map(m => (
-          <button key={m} onClick={() => { setMode(m); setResult(null); setErr(''); }}
-            className={`flex-1 py-3 rounded-xl font-semibold text-sm transition-all ${mode === m ? 'bg-white text-blue-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}>
-            {m === 'hhm' ? '📊 Enter HHM directly' : '🔢 Enter Meter Readings'}
-          </button>
-        ))}
-      </div>
-
-      <div className="card space-y-5">
-        <div>
-          <h3 className="font-bold text-gray-900 text-lg">SNGPL Gas Bill Estimator</h3>
-          <p className="text-sm text-gray-500 mt-1">Based on approximate SNGPL 2024-25 residential tariff rates.</p>
+    <div className="w-full max-w-2xl mx-auto space-y-6">
+      <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-blue-800 to-blue-600 px-6 py-5 flex items-center gap-3">
+          <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-xl">🧮</div>
+          <div>
+            <h2 className="text-white font-bold text-lg">SNGPL Gas Bill Calculator</h2>
+            <p className="text-blue-100 text-xs mt-0.5">Estimate monthly gas bill using official slab rates</p>
+          </div>
         </div>
 
-        {mode === 'hhm' ? (
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1.5">Gas Consumption (HHM)</label>
-            <input type="number" min="0" step="0.1" value={hhm}
-              onChange={e => { setHhm(e.target.value); setResult(null); setErr(''); }}
-              onKeyDown={e => e.key === 'Enter' && compute()}
-              placeholder="e.g. 2.5" className="input-field" />
-            <p className="text-xs text-gray-400 mt-1">HHM = Hundreds of Cubic Meters — printed on your bill under &quot;Consumption&quot;</p>
-            <div className="flex flex-wrap gap-2 mt-3">
-              {[0.5, 1, 1.5, 2, 3, 4].map(v => (
-                <button key={v} onClick={() => { setHhm(String(v)); setResult(null); setErr(''); }}
-                  className="px-3 py-1.5 text-xs rounded-lg bg-blue-50 text-blue-700 font-medium hover:bg-blue-100 transition-colors">
-                  {v} HHM
-                </button>
-              ))}
-            </div>
+        <div className="p-6 space-y-5">
+          {/* Mode toggle */}
+          <div className="flex gap-2 bg-gray-100 p-1 rounded-xl">
+            {(['hhm', 'reading'] as const).map(m => (
+              <button key={m} onClick={() => { setMode(m); setResult(null); setErr(''); }}
+                className={`flex-1 py-2.5 rounded-lg text-sm font-semibold transition-all ${mode === m ? 'bg-white text-blue-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}>
+                {m === 'hhm' ? '📟 Enter HHM Units' : '🔢 Meter Readings'}
+              </button>
+            ))}
           </div>
-        ) : (
-          <div className="grid sm:grid-cols-2 gap-4">
+
+          {mode === 'hhm' ? (
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Previous Reading</label>
-              <input type="number" value={prev}
-                onChange={e => { setPrev(e.target.value); setResult(null); setErr(''); }}
-                placeholder="e.g. 4500" className="input-field" />
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Gas Consumption (HHM)</label>
+              <input type="number" value={hhm} min="0" max="9999" placeholder="e.g. 250"
+                onChange={e => { setHhm(e.target.value); setResult(null); }}
+                className="input-field text-lg font-mono" />
+              <p className="text-xs text-gray-400 mt-1.5">HHM = Hundred Heat Meter — shown on your gas meter &amp; bill</p>
             </div>
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Current Reading</label>
-              <input type="number" value={curr}
-                onChange={e => { setCurr(e.target.value); setResult(null); setErr(''); }}
-                onKeyDown={e => e.key === 'Enter' && compute()}
-                placeholder="e.g. 4750" className="input-field" />
-            </div>
-            {prev && curr && parseFloat(curr) > parseFloat(prev) && (
-              <div className="sm:col-span-2 text-xs text-green-700 bg-green-50 px-3 py-2 rounded-lg">
-                Consumption: <strong>{((parseFloat(curr) - parseFloat(prev)) / 100).toFixed(2)} HHM</strong>
+          ) : (
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Previous Reading</label>
+                  <input type="number" value={prev} min="0" placeholder="e.g. 1200"
+                    onChange={e => { setPrev(e.target.value); setResult(null); }} className="input-field font-mono" />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Current Reading</label>
+                  <input type="number" value={curr} min="0" placeholder="e.g. 1450"
+                    onChange={e => { setCurr(e.target.value); setResult(null); }} className="input-field font-mono" />
+                </div>
               </div>
-            )}
-          </div>
-        )}
+              {hhmVal !== null && (
+                <div className="highlight-box py-2">
+                  <span className="text-blue-800 text-sm font-semibold">Consumption: {hhmVal} HHM</span>
+                </div>
+              )}
+            </div>
+          )}
 
-        {err && <p className="text-xs text-red-600 flex items-center gap-1">{err}</p>}
+          {err && <p className="text-sm text-red-600 flex items-center gap-1.5">{err}</p>}
 
-        <button onClick={compute} className="btn-primary w-full py-3.5">
-          🧮 Calculate Gas Bill
-        </button>
+          <button onClick={run} className="btn-primary w-full py-4 text-base font-bold">
+            Calculate Gas Bill Estimate
+          </button>
 
-        {result && (
-          <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-5 border border-blue-100 animate-slide-up">
-            <p className="text-sm font-bold text-blue-800 mb-4">Estimated Bill Breakdown</p>
-            <ul className="space-y-2.5 text-sm mb-4">
-              {[
-                { label: 'Gas Consumption Charges', val: result.energy, color: 'text-gray-700' },
-                { label: 'Fixed Monthly Charges',   val: result.fixed,  color: 'text-gray-700' },
-                { label: 'Infrastructure Cess (5%)',val: result.infra,  color: 'text-gray-700' },
-                { label: 'GST (17%)',               val: result.gst,    color: 'text-gray-700' },
-              ].map(row => (
-                <li key={row.label} className="flex justify-between">
-                  <span className={row.color}>{row.label}</span>
-                  <span className="font-medium">{fmt(row.val)}</span>
-                </li>
-              ))}
-              <li className="flex justify-between font-bold text-lg text-blue-900 border-t border-blue-200 pt-3 mt-1">
-                <span>Total Estimated</span>
-                <span>{fmt(result.total)}</span>
-              </li>
-            </ul>
-            <p className="text-xs text-gray-500">
-              * Estimate only. Actual bill may include meter rent, FCC and other charges. Visit{' '}
-              <a href="https://billchecker.sngpl.com.pk/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">official SNGPL portal</a>{' '}
-              for the exact amount.
-            </p>
-          </div>
-        )}
+          {/* Result */}
+          {result && (
+            <div className="animate-slide-up space-y-4 pt-2">
+              <div className="bg-blue-600 rounded-xl p-5 text-center text-white">
+                <div className="text-sm font-medium opacity-80 mb-1">{result.hhm} HHM consumed</div>
+                <div className="text-4xl font-black">{fmt(result.total)}</div>
+                <div className="text-xs opacity-70 mt-1">Estimated total (inc. taxes)</div>
+              </div>
+
+              <div className="space-y-2 text-sm">
+                <p className="font-semibold text-gray-700 text-xs uppercase tracking-wide">Bill Breakdown</p>
+                {result.breakdown.map((s, i) => (
+                  <div key={i} className="flex justify-between text-gray-600">
+                    <span>{s.label}</span><span className="font-medium">{fmt(s.amount)}</span>
+                  </div>
+                ))}
+                <div className="border-t border-gray-200 pt-2 space-y-1.5">
+                  <div className="flex justify-between text-gray-600"><span>Fixed / Customer Charge</span><span className="font-medium">{fmt(result.fixed)}</span></div>
+                  <div className="flex justify-between text-gray-600"><span>Variable Gas Charge</span><span className="font-medium">{fmt(result.variable)}</span></div>
+                  <div className="flex justify-between text-gray-600"><span>GIDC (~10%)</span><span className="font-medium">{fmt(result.gidc)}</span></div>
+                  <div className="flex justify-between text-gray-600"><span>GST (17%)</span><span className="font-medium">{fmt(result.gst)}</span></div>
+                  <div className="flex justify-between font-bold text-gray-900 border-t pt-2 text-base">
+                    <span>Total Estimated</span><span className="text-blue-700">{fmt(result.total)}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="warning-box text-xs text-amber-800">
+                <strong>Disclaimer:</strong> This estimate uses OGRA-approved domestic rates. Actual bill may differ due to arrears, adjustments, or tariff revisions. Always verify at the <a href="https://billchecker.sngpl.com.pk" target="_blank" rel="noopener noreferrer" className="underline">official SNGPL portal</a>.
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Slab Table */}
-      <div className="mt-6 card">
-        <h4 className="font-bold text-gray-900 mb-4">SNGPL Residential Slab Rates 2024-25</h4>
+      {/* Slab table */}
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+        <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2 text-sm">📊 SNGPL Domestic Slab Rates (2024-25)</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-blue-50">
-                <th className="px-4 py-2.5 text-left font-semibold text-gray-700 rounded-l-lg">Consumption</th>
-                <th className="px-4 py-2.5 text-left font-semibold text-gray-700">Rate/HHM</th>
-                <th className="px-4 py-2.5 text-left font-semibold text-gray-700 rounded-r-lg">Category</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
-              {SLABS.map(s => (
-                <tr key={s.label} className={`hover:bg-gray-50 ${activeHhm !== null && activeHhm > (SLABS.indexOf(s) > 0 ? SLABS[SLABS.indexOf(s)-1].max : 0) && activeHhm <= s.max ? 'bg-green-50 font-semibold' : ''}`}>
-                  <td className="px-4 py-2.5 text-gray-900">{s.label}</td>
-                  <td className="px-4 py-2.5 text-blue-700 font-semibold">PKR {s.rate.toLocaleString()}</td>
-                  <td className="px-4 py-2.5 text-gray-500">
-                    {s.max <= 1 ? 'Low' : s.max <= 2 ? 'Moderate' : s.max <= 3 ? 'High' : s.max <= 4 ? 'Very High' : 'Peak'}
-                  </td>
+            <thead><tr className="bg-blue-50 text-xs font-bold text-gray-700 uppercase tracking-wide">
+              <th className="px-3 py-2 text-left">Consumption Slab</th>
+              <th className="px-3 py-2 text-right">Rate / HHM</th>
+              <th className="px-3 py-2 text-right">Notes</th>
+            </tr></thead>
+            <tbody>
+              {[['0–100 HHM','Rs. 200 flat','Low use subsidy'],['101–300 HHM','Rs. 130','Basic domestic'],['301–500 HHM','Rs. 150','Medium use'],['501–800 HHM','Rs. 170','Higher use'],['801–1200 HHM','Rs. 200','High use'],['1201+ HHM','Rs. 250','Commercial/bulk']].map(([r,v,n],i)=>(
+                <tr key={i} className={i%2===0?'bg-white':'bg-gray-50'}>
+                  <td className="px-3 py-2.5 font-medium">{r}</td>
+                  <td className="px-3 py-2.5 text-right text-blue-700 font-semibold">{v}</td>
+                  <td className="px-3 py-2.5 text-right text-gray-500 text-xs">{n}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-gray-400 mt-2">Fixed charge PKR 100/month + Infrastructure Cess 5% + GST 17% added on top of energy charges.</p>
+        <p className="mt-3 text-xs text-gray-400">+ GST 17% + GIDC ~10% + fixed customer charge. Rates subject to OGRA revision.</p>
       </div>
     </div>
   );
