@@ -88,6 +88,71 @@ const LINK_RULES: LinkRule[] = [
     label: 'billchecker.sngpl.com.pk',
   },
 
+  // Payment guide
+  {
+    pattern: /\bpayment guide\b/i,
+    href: '/payment-guide',
+    label: 'payment guide',
+  },
+  {
+    pattern: /\bpayment methods?\b/i,
+    href: '/payment-guide',
+    label: 'payment methods',
+  },
+
+  // Troubleshooting
+  {
+    pattern: /\btroubleshooting\b/i,
+    href: '/guides',
+    label: 'troubleshooting guide',
+  },
+  {
+    pattern: /\bfile a complaint\b/i,
+    href: '/guides',
+    label: 'file a complaint',
+  },
+  {
+    pattern: /\bgas leak\b/i,
+    href: '/guides',
+    label: 'gas leak',
+  },
+
+  // Consumer number recovery
+  {
+    pattern: /\brecover.{0,15}consumer number\b/i,
+    href: '/consumer-number',
+    label: 'recover your consumer number',
+  },
+  {
+    pattern: /\blost.{0,15}consumer number\b/i,
+    href: '/consumer-number',
+    label: 'lost consumer number',
+  },
+
+  // SNGPL app
+  {
+    pattern: /\bSNGPL.{0,10}mobile app\b/i,
+    href: '/bill-check',
+    label: 'SNGPL mobile app',
+  },
+  {
+    pattern: /\bSNGPL Consumer App\b/i,
+    href: '/bill-check',
+    label: 'SNGPL Consumer App',
+  },
+
+  // Slab/calculator
+  {
+    pattern: /\bslab.{0,10}rate\b/i,
+    href: '/calculator',
+    label: 'slab rate',
+  },
+  {
+    pattern: /\bHHM\b/,
+    href: '/calculator',
+    label: 'HHM',
+  },
+
   // Guides hub
   {
     pattern: /\bSNGPL guide\b/i,

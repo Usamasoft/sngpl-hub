@@ -275,70 +275,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════ SEO CONTENT A — ABOUT / HOW TO CHECK ══════════════════════ */}
+      {/* ══════════════════════ SEO CONTENT A ══════════════════════ */}
       <section className="section-pad bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <span className="badge bg-blue-100 text-blue-700 mb-3">About SNGPL</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">What is SNGPL? Complete Consumer Guide</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">What is SNGPL?</h2>
           </div>
-
           <div className="prose-content">
-            <p>Sui Northern Gas Pipelines Limited (SNGPL) is Pakistan&apos;s largest natural gas utility company, responsible for gas transmission and distribution across Punjab, Khyber Pakhtunkhwa (KPK), and Azad Kashmir. Established in 1963 and headquartered in Lahore, SNGPL operates the most extensive gas distribution network in the country, serving over 7 million consumers ranging from domestic households and commercial establishments to industrial facilities and CNG stations.</p>
-
-            <p>As a regulated utility under the Oil and Gas Regulatory Authority (OGRA), SNGPL is required to maintain service quality, bill accuracy, and transparent consumer communication. Every SNGPL gas consumer receives a monthly bill detailing their gas consumption (measured in HHM — Hundred Heat Meters), applicable tariff slab rates, government taxes (GIDC and GST), and the total amount due.</p>
-
-            <h2>How to Check Your SNGPL Gas Bill Online — 4 Methods</h2>
-
-            <p>The SNGPL bill checking process has become significantly easier since the launch of the official digital portal. Today, consumers in Lahore, Rawalpindi, Islamabad, Faisalabad, Peshawar, and all other SNGPL service cities can check their gas bill in under a minute without visiting an office or waiting for the physical bill to arrive by post.</p>
-
-            <h3>Method 1: Official SNGPL Bill Portal (Recommended)</h3>
-            <p>The fastest and most reliable method is using the official SNGPL bill checking portal at <strong>billchecker.sngpl.com.pk</strong>:</p>
-            <ol>
-              <li>Open any web browser on your phone or computer</li>
-              <li>Navigate to billchecker.sngpl.com.pk</li>
-              <li>Enter your 10–13 digit SNGPL consumer number</li>
-              <li>Click &ldquo;Get Bill&rdquo; or the search button</li>
-              <li>View your current bill, or download it as a PDF</li>
-            </ol>
-
-            <h3>Method 2: SNGPL Consumer Mobile App</h3>
-            <p>The SNGPL Consumer App is available on both Google Play Store (Android) and Apple App Store (iOS). After registering with your consumer number and mobile OTP, you can view current bills, access 12 months of billing history, track payment status, and raise complaints. The app sends push notifications when new bills are generated, so you never miss a due date.</p>
-
-            <h3>Method 3: WhatsApp Bill Service</h3>
-            <p>SNGPL provides a WhatsApp-based bill inquiry service. Save the official SNGPL WhatsApp number (listed on sngpl.com.pk) and send your consumer number as a message. The automated system responds with your bill amount, billing period, and due date within seconds. This is ideal for quick balance checks without opening a browser.</p>
-
-            <h3>Method 4: SMS Service</h3>
-            <p>Send your consumer number via SMS to SNGPL&apos;s designated short code. You receive a text summary with your bill amount and due date. This method works without internet and is ideal for consumers in areas with limited connectivity or on basic mobile phones.</p>
-
-            <h2>Understanding Your SNGPL Gas Bill Components</h2>
-
-            <p>Your SNGPL monthly gas bill is a detailed financial statement. Understanding each line item helps you verify accuracy and plan your budget effectively:</p>
-
-            <h3>Meter Readings and HHM Consumed</h3>
-            <p>Your bill shows the previous month&apos;s meter reading and the current month&apos;s reading. The difference gives the HHM (Hundred Heat Meters) consumed. One HHM equals 100 cubic feet of natural gas. This consumption figure is applied to SNGPL&apos;s approved tariff slabs to calculate your base gas charge.</p>
-
-            <h3>How the Slab System Works — Bill Calculation Example</h3>
-            <p>SNGPL uses a cumulative progressive slab system. For example, if you consume <strong>250 HHM</strong> in a month:</p>
-            <ul>
-              <li>First 100 HHM = Flat Rs. 200</li>
-              <li>Next 150 HHM (101–250) × Rs. 130 = Rs. 19,500</li>
-              <li>Base total = Rs. 19,700</li>
-              <li>GIDC at 10% = Rs. 1,970</li>
-              <li>GST at 17% on (Rs. 19,700 + Rs. 1,970) = Rs. 3,684</li>
-              <li><strong>Approximate total bill: Rs. 25,354</strong></li>
-            </ul>
-            <p>Use our <Link href="/calculator">free gas bill calculator</Link> to estimate your exact bill based on your actual HHM consumption.</p>
-
-            <h3>GIDC — Gas Infrastructure Development Cess</h3>
-            <p>GIDC is a government levy charged at 10% of your base gas consumption amount. The revenue funds gas infrastructure development and pipeline expansion projects across Pakistan. It appears as a separate line item on your SNGPL bill and is applied before GST is calculated.</p>
-
-            <h3>GST — General Sales Tax</h3>
-            <p>A 17% General Sales Tax is applied to the combined total of your base gas charges and GIDC. This is a federal tax collected by SNGPL on behalf of the Federal Board of Revenue (FBR), consistent across all SNGPL service areas.</p>
-
-            <h3>Fixed Charges and Meter Rent</h3>
-            <p>In addition to consumption-based charges, every SNGPL bill includes a small fixed monthly charge covering meter maintenance and infrastructure costs. This charge applies regardless of consumption level and is the same for all domestic consumers of the same connection type.</p>
+            <p>Sui Northern Gas Pipelines Limited (SNGPL) is Pakistan&apos;s largest natural gas utility, serving over 7 million consumers across Punjab, KPK, and Azad Kashmir. Every consumer receives a monthly bill showing HHM consumption, slab-based gas charges, GIDC (10%), and GST (17%).</p>
+            <p>You can check your SNGPL bill online via <strong>billchecker.sngpl.com.pk</strong>, the SNGPL mobile app (Android/iOS), WhatsApp, or SMS — each method takes under a minute and only requires your consumer number.</p>
+            <p className="mt-2">
+              <Link href="/bill-check" className="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:text-blue-800">
+                Read the complete bill-check guide — all 4 methods explained →
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -351,24 +302,16 @@ export default function HomePage() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">How to Pay Your SNGPL Gas Bill</h2>
             <p className="text-gray-500 mt-2 text-sm">Online, via app, ATM, or bank branch — choose what suits you</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {paymentMethods.map(m => (
-              <div key={m.name} className="card hover:border-green-200 hover:shadow-lg transition-all">
-                <div className="flex items-center gap-3 mb-4">
+              <div key={m.name} className="card hover:border-green-200 hover:shadow-md transition-all">
+                <div className="flex items-center gap-3">
                   <span className="text-2xl">{m.icon}</span>
                   <div>
-                    <div className="font-bold text-gray-900">{m.name}</div>
-                    <div className="text-xs text-gray-500">{m.desc}</div>
+                    <div className="font-bold text-gray-900 text-sm">{m.name}</div>
+                    <div className="text-xs text-gray-500 mt-0.5">{m.desc}</div>
                   </div>
                 </div>
-                <ol className="space-y-1.5">
-                  {m.steps.map((step, si) => (
-                    <li key={si} className="flex items-start gap-2 text-xs text-gray-600">
-                      <span className="w-4 h-4 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-[10px] flex-shrink-0 mt-0.5">{si + 1}</span>
-                      {step}
-                    </li>
-                  ))}
-                </ol>
               </div>
             ))}
           </div>
@@ -381,78 +324,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════ SEO CONTENT B — CONSUMER NO / DUPLICATE / CITIES / TROUBLESHOOT ══════════════════════ */}
+      {/* ══════════════════════ SEO CONTENT B ══════════════════════ */}
       <section className="section-pad bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 prose-content">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8">
+            <span className="badge bg-purple-100 text-purple-700 mb-3">Consumer Guides</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Essential SNGPL Consumer Information</h2>
+          </div>
+          <div className="space-y-5">
 
-          <h2>SNGPL Consumer Number — Complete Guide</h2>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 className="font-bold text-gray-900 mb-2">SNGPL Consumer Number</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">Your 10–13 digit consumer number is the single most important identifier for your gas account — required for bill checks, payments, and complaints. It appears on every printed bill under &ldquo;Consumer No.&rdquo; Lost it? Call 1199 with your CNIC or check Easypaisa/JazzCash payment history.</p>
+              <Link href="/consumer-number" className="text-blue-600 text-sm font-semibold hover:text-blue-800">Complete consumer number guide →</Link>
+            </div>
 
-          <p>Your SNGPL consumer number is the most important identifier for your gas account. Without it, you cannot check your bill online, make digital payments, or register complaints through official channels. Here is everything you need to know:</p>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 className="font-bold text-gray-900 mb-2">Duplicate SNGPL Bill</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">Need a copy of your gas bill? Download instantly from billchecker.sngpl.com.pk or the SNGPL app (12-month history). A duplicate PDF is accepted by all banks, ATMs, and payment apps — no stamp needed for payments.</p>
+              <Link href="/duplicate-bill" className="text-blue-600 text-sm font-semibold hover:text-blue-800">Download duplicate bill guide →</Link>
+            </div>
 
-          <h3>What Does a Consumer Number Look Like?</h3>
-          <p>SNGPL consumer numbers are 10 to 13 digits long and contain only numbers — no letters, spaces, or special characters. They appear on every printed gas bill in the top section under &ldquo;Consumer No.&rdquo; or &ldquo;Cust. No.&rdquo; The first digits encode your region (SNGPL zone), the middle digits identify your distribution circle, and the final digits are your unique sequential account identifier.</p>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 className="font-bold text-gray-900 mb-2">Billing Problems &amp; Troubleshooting</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">High bill? Estimated reading? Payment not reflecting? Gas disconnected? Each issue has a structured resolution path — from self-checking your meter to filing with OGRA if needed.</p>
+              <Link href="/guides" className="text-blue-600 text-sm font-semibold hover:text-blue-800">See full troubleshooting guide →</Link>
+            </div>
 
-          <h3>Where to Find Your Consumer Number</h3>
-          <p>Your consumer number appears on: (1) the top of every gas bill, (2) your meter card affixed near the gas meter, (3) the SNGPL Consumer mobile app after registration, and (4) the SNGPL self-service portal at selfservice.sngpl.com.pk. If you cannot find it anywhere, call SNGPL helpline 1199 with your CNIC and connection address for immediate assistance.</p>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 className="font-bold text-gray-900 mb-2">7 Ways to Reduce Your Gas Bill</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">Insulate your home, upgrade to an instant geyser, use pressure cookers, fix gas line leaks, service appliances annually, set the geyser to 50–55°C, and read your meter monthly to catch billing errors early.</p>
+              <Link href="/guides" className="text-blue-600 text-sm font-semibold hover:text-blue-800">View all energy-saving guides →</Link>
+            </div>
 
-          <h3>How to Recover a Lost Consumer Number</h3>
-          <p>Call SNGPL helpline 1199 with your CNIC number and complete gas connection address. After identity verification, the representative provides your consumer number verbally. Alternatively, visit your nearest SNGPL Service Delivery Center with your original CNIC. Previous Easypaisa or JazzCash payment receipts also show the consumer number used for that transaction.</p>
-
-          <h2>How to Download SNGPL Duplicate Bill</h2>
-
-          <p>A duplicate SNGPL bill is an official reprint of your original gas billing statement, equally valid for payment at any bank, ATM, Easypaisa, or JazzCash. You may need one when your physical bill is lost, damaged, or never arrived — or when you need a utility bill as address proof for a bank account, visa application, or property transaction.</p>
-
-          <p>The quickest method: visit billchecker.sngpl.com.pk, enter your consumer number, and click &ldquo;Download PDF.&rdquo; The SNGPL Consumer mobile app gives access to 12 months of previous bills for download. For a physically stamped copy, visit your nearest SNGPL Service Delivery Center with your CNIC.</p>
-
-          <p><Link href="/duplicate-bill">Read the complete duplicate bill download guide →</Link></p>
-
-          <h2>SNGPL Service Area — Provinces and Cities</h2>
-
-          <p>SNGPL serves consumers across two major provinces and the federal capital. In <strong>Punjab</strong>, the service area includes Lahore, Faisalabad, Rawalpindi, Gujranwala, Sialkot, Multan, Bahawalpur, Sargodha, Sahiwal, and dozens of smaller cities. In <strong>Khyber Pakhtunkhwa</strong>, SNGPL serves Peshawar, Abbottabad, Mardan, Swabi, Mansehra, and Nowshera. <strong>Islamabad</strong> (federal capital) and select areas of <strong>Azad Kashmir</strong> are also fully covered. Each area has a dedicated SNGPL Service Delivery Center (SDC) for in-person consumer services.</p>
-
-          <h2>How to Apply for a New SNGPL Gas Connection</h2>
-
-          <p>If your property is in an SNGPL service area but does not yet have a gas connection, you can apply through the official process:</p>
-          <ol>
-            <li>Visit selfservice.sngpl.com.pk or your nearest Service Delivery Center</li>
-            <li>Complete the new connection application form with your CNIC, property address, and contact details</li>
-            <li>Submit required documents: CNIC copy, property ownership or tenancy document, and application fee</li>
-            <li>SNGPL conducts a site survey to assess feasibility and required pipeline work</li>
-            <li>Upon approval, SNGPL installs the meter and connection — typically within 30–60 working days of feasibility approval</li>
-            <li>After installation, receive your consumer number and first bill in the next billing cycle</li>
-          </ol>
-          <p>Application fees vary by connection type and distance from the nearest distribution main. Call helpline 1199 for the latest fee schedule in your area.</p>
-
-          <h2>Troubleshooting Common SNGPL Billing Problems</h2>
-
-          <h3>Wrong or Unusually High Bill Amount</h3>
-          <p>If your bill amount seems incorrect — significantly higher than usual or based on an estimated reading — first compare your meter&apos;s current display with the reading shown on the bill. If there is a discrepancy, call SNGPL helpline 1199 to request a meter inspection. SNGPL will verify and adjust the bill if the reading was wrong. In the meantime, consider paying the undisputed portion &ldquo;under protest&rdquo; to avoid disconnection.</p>
-
-          <h3>Estimated Readings on Your Bill</h3>
-          <p>SNGPL sometimes issues bills based on estimated readings when a meter reader cannot access the property. These estimates are based on your historical average consumption. If you receive an estimated bill, note your actual meter reading, call 1199, and request a corrected bill for the next cycle. You can also submit meter readings yourself through the SNGPL mobile app.</p>
-
-          <h3>Payment Not Reflecting Online</h3>
-          <p>Digital payments (Easypaisa, JazzCash, internet banking) typically reflect on SNGPL&apos;s system within 24–48 hours. If after 48 hours your payment still shows as unpaid, contact your payment channel with the transaction reference number to confirm it was forwarded to SNGPL. Then call helpline 1199 with your consumer number and transaction details for manual verification.</p>
-
-          <h3>Gas Supply Disconnection</h3>
-          <p>If your gas has been disconnected for non-payment, pay all outstanding dues immediately through any payment channel. Call SNGPL helpline 1199 with your payment transaction ID — reconnection is typically initiated within 1–3 working days after payment confirmation. A reconnection fee applies. Never attempt to reconnect the gas supply yourself as this is dangerous and illegal.</p>
-
-          <h3>Gas Leakage Emergency</h3>
-          <p>If you smell gas in your home or premises, immediately evacuate everyone without operating any electrical switches or open flames. Call SNGPL emergency helpline 1199 from outside the building. SNGPL emergency teams respond 24/7. Do not re-enter until SNGPL confirms the premises are safe.</p>
-
-          <h2>7 Ways to Reduce Your SNGPL Gas Bill</h2>
-
-          <p>Smart habits and energy-efficient appliances can significantly reduce your monthly gas bill:</p>
-          <ul>
-            <li><strong>Insulate your home:</strong> Proper wall and roof insulation significantly reduces winter heating requirements, directly cutting gas consumption for room heaters and geysers.</li>
-            <li><strong>Upgrade to an instantaneous geyser:</strong> Instant gas geysers consume up to 40% less gas than storage tank geysers. Consider upgrading if your geyser is more than 10 years old.</li>
-            <li><strong>Annual appliance servicing:</strong> Dirty burners and clogged geyser heat exchangers burn more gas for the same output. Annual maintenance by a certified technician keeps appliances efficient.</li>
-            <li><strong>Use pressure cookers:</strong> Cooking with a pressure cooker reduces gas usage by up to 70% compared to open pot cooking. Keeping pots covered also speeds cooking and saves gas.</li>
-            <li><strong>Set geyser temperature correctly:</strong> Set your geyser thermostat to 50–55°C. Reducing temperature from 70°C to 55°C can save 15–20% on geyser gas usage without any comfort loss.</li>
-            <li><strong>Fix leaks promptly:</strong> Even minor leaks at hose connections or burner valves waste significant gas. Have a plumber check and tighten all connections annually before winter.</li>
-            <li><strong>Monitor your meter monthly:</strong> Check your gas meter each month and compare against your bill reading. A discrepancy may indicate a slow leak or meter error requiring immediate attention.</li>
-          </ul>
-
+          </div>
         </div>
       </section>
 
@@ -510,22 +415,8 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════ STATS + CTA ══════════════════════ */}
-      <section className="section-pad bg-white">
+      <section className="section-pad bg-white" id="cta">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
-            {[
-              { v: '7M+',  l: 'SNGPL Consumers' },
-              { v: '10K+', l: 'SEO Guide Pages'  },
-              { v: '100%', l: 'Safe Redirects'   },
-              { v: '24/7', l: 'Always Available'  },
-            ].map(s => (
-              <div key={s.l} className="text-center p-5 bg-gray-50 rounded-2xl border border-gray-100">
-                <div className="text-2xl font-black text-blue-700">{s.v}</div>
-                <div className="text-xs text-gray-500 mt-1">{s.l}</div>
-              </div>
-            ))}
-          </div>
-
           <div className="bg-gradient-to-br from-blue-700 to-blue-900 rounded-3xl p-8 md:p-12 text-white text-center shadow-2xl">
             <h2 className="text-2xl md:text-3xl font-black mb-3">Ready to Check Your SNGPL Bill?</h2>
             <p className="text-blue-100 mb-6 text-base max-w-lg mx-auto">

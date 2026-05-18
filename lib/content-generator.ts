@@ -48,6 +48,16 @@ function safeMeta(s: string): string {
   return s + ' Free Pakistan guide.'.slice(0, 160 - s.length);
 }
 
+// ─── SECTION ORDER VARIATION ─────────────────────────────────────
+// Rotates section order based on a simple hash of city slug + type
+// to create structural diversity across pages without random runtime values.
+function sectionVariantIndex(city: CityData, type: string): number {
+  let h = 0;
+  const s = city.slug + type;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return h % 3; // 0, 1, or 2
+}
+
 // ─── MONTH helpers ───────────────────────────────────────────────
 const MONTHS: Record<string, string> = {
   january:'January', february:'February', march:'March', april:'April',
@@ -256,6 +266,15 @@ For ${city.name} consumers wishing to comment on upcoming tariff revisions, OGRA
 
   const conclusion = `Checking your SNGPL gas bill in ${city.name} is a straightforward process that takes under a minute with the right tools. Whether you use the official portal, the SNGPL mobile app, WhatsApp, or SMS, your bill information is always accessible. Keep your consumer number saved — it is your primary identifier for all SNGPL services in ${city.name}. For billing disputes or service issues, the ${city.office} and the 24/7 helpline at 1199 are your best resources. Set a monthly reminder to check your bill before the due date to avoid late payment surcharges and maintain an uninterrupted gas supply.`;
 
+  // Rotate the middle sections for structural diversity
+  const vi = sectionVariantIndex(city, type);
+  if (vi === 1 && sections.length > 3) {
+    const [a, b, ...rest] = sections;
+    sections.splice(0, sections.length, b, a, ...rest);
+  } else if (vi === 2 && sections.length > 4) {
+    const last = sections.pop()!;
+    sections.splice(2, 0, last);
+  }
   sections.unshift(getTypeFocusSection(type, city, 'bill-check'));
   sections.push(getCommonMistakesSection(city, 'bill-check'));
   faqs.unshift(...getTypeFocusFaqs(type, city, 'bill-check'));

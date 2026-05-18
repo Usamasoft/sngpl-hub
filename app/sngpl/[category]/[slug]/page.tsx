@@ -24,7 +24,7 @@ export const revalidate = 86400; // 24-hour ISR
 
 // ─── STATIC PARAMS (top 400 pre-built at deploy) ─────────────────
 export async function generateStaticParams() {
-  return getTopStaticParams(600);
+  return getTopStaticParams(1000);
 }
 
 // ─── METADATA ────────────────────────────────────────────────────
@@ -218,9 +218,16 @@ export default async function ProgrammaticPage({
 
             {/* Intro */}
             <div className="mb-6">
-              {content.intro.split('\n\n').map((para, i) => (
-                <p key={i} className="text-gray-700 leading-relaxed mb-4 text-base">{para}</p>
-              ))}
+              {applyInlineLinks(content.intro, `/sngpl/${category}/${slug}`)
+                .split('\n\n').map((para, i) => {
+                  const rendered = para
+                    .replace(/\[([^\]]+)\]\((\/[^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:text-blue-800 underline underline-offset-2">$1</a>')
+                    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+                  return (
+                    <p key={i} className="text-gray-700 leading-relaxed mb-4 text-base"
+                      dangerouslySetInnerHTML={{ __html: rendered }} />
+                  );
+              })}
             </div>
 
             {/* Table of Contents */}

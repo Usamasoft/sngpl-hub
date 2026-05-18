@@ -90,3 +90,53 @@
   @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
   .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4,0,0.6,1) infinite; }
 }
+
+/* ─── Mobile Rhythm & Readability Polish ─────────────────────── */
+
+/* Improve prose readability on mobile */
+@media (max-width: 640px) {
+  .prose-content p,
+  .prose-content li {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
+}
+
+/* FAQ summary padding on mobile */
+@media (max-width: 640px) {
+  details summary {
+    padding: 0.875rem 1rem;
+  }
+
+  details > div {
+    padding: 0 1rem 1rem;
+  }
+}
+
+/* Prevent text overflow on narrow screens */
+.prose-content table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Better tap targets on mobile */
+@media (max-width: 640px) {
+  nav a,
+  details summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Reduce heading weight on very small screens for visual balance */
+@media (max-width: 380px) {
+  h1 { font-size: 1.625rem; }
+  h2 { font-size: 1.25rem; }
+}
+
+/* Improve dense FAQ section breathing room */
+.faq-section details + details {
+  margin-top: 0.5rem;
+}
