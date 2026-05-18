@@ -156,7 +156,7 @@ export default function GasCalculator() {
               </div>
 
               <div className="warning-box text-xs text-amber-800">
-                <strong>Disclaimer:</strong> This estimate uses OGRA-approved domestic rates. Actual bill may differ due to arrears, adjustments, or tariff revisions. Always verify at the <a href="https://billchecker.sngpl.com.pk" target="_blank" rel="noopener noreferrer" className="underline">official SNGPL portal</a>.
+                <strong>Disclaimer:</strong> This estimate uses OGRA-approved domestic rates. Actual bill may differ due to arrears, adjustments, or tariff revisions. Always verify at the <a href="https://sngpl.com.pk" target="_blank" rel="noopener noreferrer" className="underline">official SNGPL portal</a>.
               </div>
             </div>
           )}

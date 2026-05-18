@@ -3,11 +3,11 @@ import Link from 'next/link';
 import BillChecker from '../components/BillChecker';
 
 export const metadata: Metadata = {
-  title: 'SNGPL Bill Payment Guide — Easypaisa, JazzCash, HBL, ATM | 2025',
+  title: 'SNGPL Bill Payment Guide — Easypaisa, JazzCash, HBL, ATM | 2026',
   description: 'Pay your SNGPL gas bill online via Easypaisa, JazzCash, HBL internet banking, ATM, or bank branch. Step-by-step guide for every payment method. Free.',
   alternates: { canonical: 'https://sngplbillcheck.pk/payment-guide' },
   openGraph: {
-    title: 'SNGPL Gas Bill Payment Guide — All Methods 2025',
+    title: 'SNGPL Gas Bill Payment Guide — All Methods 2026',
     description: 'Complete guide to paying your SNGPL bill: Easypaisa, JazzCash, HBL, UBL, MCB internet banking, ATM, bank branch. Avoid disconnection with timely payment.',
     url: 'https://sngplbillcheck.pk/payment-guide',
   },
@@ -113,7 +113,7 @@ const comparisonData = [
 ];
 
 const faqs = [
-  { q: 'What is the last date to pay SNGPL bill?', a: 'The due date is printed on your bill — typically 15–20 days after the bill generation date. After the due date, a 10% late payment surcharge is added to your next bill. Check your latest bill on billchecker.sngpl.com.pk for your exact due date as it varies by billing cycle.' },
+  { q: 'What is the last date to pay SNGPL bill?', a: 'The due date is printed on your bill — typically 15–20 days after the bill generation date. After the due date, a 10% late payment surcharge is added to your next bill. Check your latest bill on sngpl.com.pk for your exact due date as it varies by billing cycle.' },
   { q: 'How long does SNGPL payment take to reflect online?', a: 'Easypaisa and JazzCash: typically 24–48 hours. Internet banking: 24–48 hours. ATM and bank branch: 48–72 hours. SNGPL franchise: 24–48 hours. If payment has not reflected after 72 hours, call your payment channel with the transaction ID, then call SNGPL helpline 1199 for manual verification.' },
   { q: 'What happens if I pay the wrong amount?', a: 'If you overpay, the excess becomes an advance credit on your next bill — SNGPL does not automatically refund small overpayments. If you underpay, the remaining balance becomes an arrear with a 10% late surcharge if the due date has passed. Contact SNGPL helpline 1199 for large overpayment refunds or to request a payment plan for underpayments.' },
   { q: 'Can I pay multiple months of SNGPL bills at once?', a: 'Yes. Your current bill total already includes all outstanding arrears from previous months. Paying this total amount in full clears all dues. You can also make advance payments greater than the current bill — the excess credit applies to future bills.' },
@@ -131,6 +131,14 @@ const faqs = [
 export default function PaymentGuidePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sngplbillcheck.pk' },
+          { '@type': 'ListItem', position: 2, name: 'Payment Guide', item: 'https://sngplbillcheck.pk/payment-guide' },
+        ],
+      }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
@@ -166,7 +174,7 @@ export default function PaymentGuidePage() {
       <div className="max-w-4xl mx-auto px-4 py-10 prose-content">
 
         <h2>Before You Pay — Important First Steps</h2>
-        <p>Always verify your current bill amount on <strong>billchecker.sngpl.com.pk</strong> before initiating any payment. This critical first step ensures you pay the correct amount, confirms the payment due date, reveals any arrears from previous months, and helps you detect billing errors before payment complicates the situation. Your bill on the portal shows: the total amount due (current charges + any arrears), the due date, and the consumer number to use across all payment channels.</p>
+        <p>Always verify your current bill amount on <strong>sngpl.com.pk</strong> before initiating any payment. This critical first step ensures you pay the correct amount, confirms the payment due date, reveals any arrears from previous months, and helps you detect billing errors before payment complicates the situation. Your bill on the portal shows: the total amount due (current charges + any arrears), the due date, and the consumer number to use across all payment channels.</p>
         <p>If the bill amount seems unusually high, compare your meter reading with the reading shown on the bill before paying. If there is a significant discrepancy, call SNGPL helpline 1199 to request a meter verification before payment. Paying a disputed bill without protest may weaken your dispute claim later.</p>
 
         <h2>5 Critical Payment Tips to Avoid Problems</h2>

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-const PORTAL_URL = 'https://billchecker.sngpl.com.pk/';
+const PORTAL_URL = 'https://sngpl.com.pk/';
 
 interface RecentSearch { num: string; ts: number; }
 

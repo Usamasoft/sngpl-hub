@@ -37,6 +37,14 @@ export default function TaxesExplainedPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sngplbillcheck.pk' },
+          { '@type': 'ListItem', position: 2, name: 'Gas Bill Taxes Explained', item: 'https://sngplbillcheck.pk/sngpl-taxes-explained' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
         '@type': 'Article',
         headline: 'SNGPL Gas Bill Taxes Explained 2026 — GIDC, GST, OGRA Charges',
         description: 'Complete reference guide to every tax and charge on your SNGPL gas bill including GIDC, GST, meter rent, and OGRA tariff regulation.',

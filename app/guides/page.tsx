@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'SNGPL Guides — Consumer Number, Duplicate Bill, Payment & Troubleshooting 2025',
+  title: 'SNGPL Guides — Consumer Number, Duplicate Bill, Payment & Troubleshooting 2026',
   description: 'Complete SNGPL guides: consumer number lookup, duplicate bill download, online payment methods, and troubleshooting. Free step-by-step guides for every SNGPL service in Pakistan.',
   alternates: { canonical: 'https://sngplbillcheck.pk/guides' },
 };
@@ -78,7 +78,7 @@ export default function GuidesPage() {
         '@type': 'FAQPage',
         mainEntity: [
           { '@type': 'Question', name: 'How do I find my SNGPL consumer number?', acceptedAnswer: { '@type': 'Answer', text: 'Your SNGPL consumer number is printed on every gas bill in the top section labeled "Consumer No." or "Cust. No." You can also find it on your meter card near the gas meter, or recover it by calling SNGPL helpline 1199 with your CNIC and connection address.' } },
-          { '@type': 'Question', name: 'How do I download a duplicate SNGPL bill?', acceptedAnswer: { '@type': 'Answer', text: 'Visit billchecker.sngpl.com.pk, enter your consumer number, and click "Download PDF." Alternatively, use the SNGPL Consumer mobile app, send your consumer number to SNGPL WhatsApp, or visit your nearest SNGPL Service Delivery Center.' } },
+          { '@type': 'Question', name: 'How do I download a duplicate SNGPL bill?', acceptedAnswer: { '@type': 'Answer', text: 'Visit sngpl.com.pk, enter your consumer number, and click "Download PDF." Alternatively, use the SNGPL Consumer mobile app, send your consumer number to SNGPL WhatsApp, or visit your nearest SNGPL Service Delivery Center.' } },
           { '@type': 'Question', name: 'How do I pay my SNGPL gas bill online?', acceptedAnswer: { '@type': 'Answer', text: 'Pay via Easypaisa (Bill Payments → Gas → SNGPL), JazzCash (Pay Bills → Gas), HBL/UBL/MCB internet banking (Utility Bills → SNGPL), or any ATM (Bill Payment → Gas → SNGPL). Enter your consumer number to fetch the bill amount and confirm payment.' } },
           { '@type': 'Question', name: 'What is the SNGPL helpline number?', acceptedAnswer: { '@type': 'Answer', text: 'SNGPL helpline is 1199 — available 24/7 for emergencies, billing inquiries, complaint registration, and consumer number recovery. The online self-service portal is at selfservice.sngpl.com.pk.' } },
           { '@type': 'Question', name: 'How do I register a complaint with SNGPL?', acceptedAnswer: { '@type': 'Answer', text: 'Register online at selfservice.sngpl.com.pk, call SNGPL helpline 1199, or visit your nearest SNGPL Service Delivery Center. Always get a complaint reference number for tracking. Escalate to OGRA (ogra.org.pk) if SNGPL does not resolve within 14 working days.' } },
@@ -198,7 +198,7 @@ export default function GuidesPage() {
           <h3>Method 1: SNGPL Official Web Portal</h3>
           <p>The SNGPL official bill checking portal is the primary digital channel for viewing and downloading duplicate bills. It is accessible from any internet-connected device — desktop computer, laptop, smartphone, or tablet.</p>
           <ol>
-            <li><strong>Open your web browser</strong> and navigate to the official SNGPL bill portal. SNGPL maintains its consumer portal at billchecker.sngpl.com.pk. Ensure you are on the official domain and not a lookalike or third-party site. The official URL contains "sngpl.com.pk" in the domain.</li>
+            <li><strong>Open your web browser</strong> and navigate to the official SNGPL bill portal. SNGPL maintains its consumer portal at sngpl.com.pk. Ensure you are on the official domain and not a lookalike or third-party site. The official URL contains "sngpl.com.pk" in the domain.</li>
             <li><strong>Locate the search field</strong> on the homepage. It is prominently displayed and labeled "Enter Consumer Number" or similar. The field accepts numeric input only.</li>
             <li><strong>Enter your consumer number exactly as it appears on your bill.</strong> Do not add spaces, hyphens, or leading zeros that are not part of your actual consumer number. If your number is 12 digits, enter all 12 digits without modification.</li>
             <li><strong>Click the search button</strong> (labeled "Get Bill," "Search," or represented by a magnifying glass icon). The system will query SNGPL's billing database and return your latest bill information within seconds.</li>

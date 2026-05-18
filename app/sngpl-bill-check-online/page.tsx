@@ -27,11 +27,11 @@ const toc = [
 ];
 
 const faqs = [
-  { q: 'How do I check my SNGPL bill online?', a: 'To check your SNGPL bill online, visit our checker above or go directly to billchecker.sngpl.com.pk. Enter your 10-digit consumer number and click submit. Your current bill details, amount due, due date, and consumption will be displayed immediately.' },
-  { q: 'What is the official SNGPL bill checking website?', a: 'The official SNGPL bill checking portal is billchecker.sngpl.com.pk. This is the only official website for SNGPL bill verification. Our website safely redirects you to this portal — we do not display bill data ourselves.' },
+  { q: 'How do I check my SNGPL bill online?', a: 'To check your SNGPL bill online, visit our checker above or go directly to sngpl.com.pk. Enter your 10-digit consumer number and click submit. Your current bill details, amount due, due date, and consumption will be displayed immediately.' },
+  { q: 'What is the official SNGPL bill checking website?', a: 'The official SNGPL bill checking portal is sngpl.com.pk. This is the only official website for SNGPL bill verification. Our website safely redirects you to this portal — we do not display bill data ourselves.' },
   { q: 'Can I check my SNGPL bill on mobile?', a: 'Yes! The SNGPL bill portal is fully mobile-responsive. You can check your bill on any smartphone browser. Additionally, SNGPL has an official mobile app available for both Android and iOS for convenient bill checking.' },
   { q: 'What if my bill is not showing online?', a: 'If your bill is not showing, it may not have been generated yet. SNGPL generates bills after meter reading, which happens monthly. Bills typically appear online 3-5 days after the meter reading date. Also verify you are entering the correct consumer number.' },
-  { q: 'Is it safe to check my SNGPL bill online?', a: 'Yes, it is completely safe to check your bill on the official SNGPL portal (billchecker.sngpl.com.pk). The portal uses secure HTTPS encryption. Our site also uses HTTPS and never stores your consumer number — we only redirect you to the official site.' },
+  { q: 'Is it safe to check my SNGPL bill online?', a: 'Yes, it is completely safe to check your bill on the official SNGPL portal (sngpl.com.pk). The portal uses secure HTTPS encryption. Our site also uses HTTPS and never stores your consumer number — we only redirect you to the official site.' },
   { q: 'How do I pay my SNGPL bill online after checking?', a: 'After checking your bill on the SNGPL portal, you can pay through multiple channels: mobile banking apps (HBL, UBL, MCB, Meezan Bank), EasyPaisa, JazzCash, 1Bill platform, bank branches, Pakistan Post offices, and selected retail outlets like Ufone franchises.' },
   { q: 'What is the SNGPL helpline number?', a: 'SNGPL helpline number is 1199. This is available 24/7 for bill inquiries, complaints, and emergencies. You can also contact SNGPL on WhatsApp at 0311-7000-786 or visit their official website sngpl.com.pk for more contact options.' },
   { q: 'Can I download my SNGPL bill as PDF?', a: 'Yes. After checking your bill on the official SNGPL portal, there is a "Print Bill" or "Download Bill" option. You can save it as a PDF using your browser\'s print function (select "Save as PDF" instead of a printer). See our dedicated duplicate bill download guide for full instructions.' },
@@ -55,7 +55,7 @@ export default function SNGPLBillCheckOnlinePage() {
         description: 'Step-by-step guide to check SNGPL gas bill online in Pakistan',
         step: [
           { '@type': 'HowToStep', position: 1, name: 'Find Consumer Number', text: 'Locate your 10-digit SNGPL consumer number on your gas bill.' },
-          { '@type': 'HowToStep', position: 2, name: 'Visit SNGPL Portal', text: 'Go to billchecker.sngpl.com.pk or use our checker above.' },
+          { '@type': 'HowToStep', position: 2, name: 'Visit SNGPL Portal', text: 'Go to sngpl.com.pk or use our checker above.' },
           { '@type': 'HowToStep', position: 3, name: 'Enter Consumer Number', text: 'Type your consumer number in the input field.' },
           { '@type': 'HowToStep', position: 4, name: 'View Bill', text: 'Your bill details will appear on screen.' },
         ],
@@ -115,7 +115,7 @@ export default function SNGPLBillCheckOnlinePage() {
           <div className="prose-content">
             <p>The <strong>SNGPL online bill checking service</strong> is a digital platform provided by Sui Northern Gas Pipelines Limited (SNGPL) that allows residential, commercial, and industrial consumers across Pakistan to view, verify, and download their monthly gas bills without visiting any SNGPL office.</p>
             <p>Before this service was introduced, Pakistani households had to either wait for the paper bill to arrive, visit the local SNGPL subdivision office, or call the helpline to get their bill details. The introduction of the online portal revolutionized how over 7 million SNGPL consumers manage their utility accounts.</p>
-            <p>Today, the <strong>SNGPL bill portal at billchecker.sngpl.com.pk</strong> provides instant access to:</p>
+            <p>Today, the <strong>SNGPL bill portal at sngpl.com.pk</strong> provides instant access to:</p>
             <ul>
               <li>Current monthly bill amount and due date</li>
               <li>Previous bill history and consumption trends</li>
@@ -130,7 +130,7 @@ export default function SNGPLBillCheckOnlinePage() {
 
             <div className="highlight-box">
               <p className="font-semibold text-blue-900">🔒 Important Safety Note</p>
-              <p className="text-blue-800 text-sm mt-1">Always check your bill at the official SNGPL portal (billchecker.sngpl.com.pk). Our website safely redirects you there — we never display or store your bill data. Beware of unofficial websites that claim to show your bill data.</p>
+              <p className="text-blue-800 text-sm mt-1">Always check your bill at the official SNGPL portal (sngpl.com.pk). Our website safely redirects you there — we never display or store your bill data. Beware of unofficial websites that claim to show your bill data.</p>
             </div>
 
             <h3>What is SNGPL?</h3>
@@ -144,7 +144,7 @@ export default function SNGPLBillCheckOnlinePage() {
               <li>Coverage area: Punjab, KPK, AJK</li>
               <li>Helpline: 1199 (24/7)</li>
               <li>Official website: sngpl.com.pk</li>
-              <li>Bill portal: billchecker.sngpl.com.pk</li>
+              <li>Bill portal: sngpl.com.pk</li>
             </ul>
           </div>
         </section>
@@ -229,7 +229,7 @@ export default function SNGPLBillCheckOnlinePage() {
             <h3>Method 2: Visiting SNGPL Portal Directly</h3>
             <ol>
               <li>Open your preferred web browser (Chrome, Firefox, Edge, Safari)</li>
-              <li>In the address bar, type: <strong>billchecker.sngpl.com.pk</strong></li>
+              <li>In the address bar, type: <strong>sngpl.com.pk</strong></li>
               <li>Press Enter to navigate to the official SNGPL bill portal</li>
               <li>Look for the input field labeled &quot;Consumer Number&quot; or &quot;Account Number&quot;</li>
               <li>Enter your 10-digit consumer number</li>
@@ -286,7 +286,7 @@ export default function SNGPLBillCheckOnlinePage() {
             <h3>Via Mobile Browser</h3>
             <ol>
               <li>Open <strong>Chrome</strong> or <strong>Safari</strong> on your smartphone</li>
-              <li>Type <strong>billchecker.sngpl.com.pk</strong> in the address bar</li>
+              <li>Type <strong>sngpl.com.pk</strong> in the address bar</li>
               <li>The portal will load in mobile-friendly format</li>
               <li>Enter your SNGPL consumer number in the input field</li>
               <li>Tap the submit button</li>
@@ -410,7 +410,7 @@ export default function SNGPLBillCheckOnlinePage() {
 
             <h3>Online Method (Most Convenient)</h3>
             <ol>
-              <li>Visit the official SNGPL portal at <strong>billchecker.sngpl.com.pk</strong></li>
+              <li>Visit the official SNGPL portal at <strong>sngpl.com.pk</strong></li>
               <li>Enter your consumer number and view your bill</li>
               <li>Look for the <strong>&quot;Print Bill&quot;</strong> or <strong>&quot;Download&quot;</strong> button on the bill page</li>
               <li>Click it to open your bill in printable format</li>
@@ -574,7 +574,7 @@ export default function SNGPLBillCheckOnlinePage() {
                 <tr><td>WhatsApp</td><td>0311-7000-786</td><td>Business hours</td></tr>
                 <tr><td>Email</td><td>info@sngpl.com.pk</td><td>Response in 48hrs</td></tr>
                 <tr><td>Official Website</td><td>sngpl.com.pk</td><td>24/7</td></tr>
-                <tr><td>Bill Portal</td><td>billchecker.sngpl.com.pk</td><td>24/7</td></tr>
+                <tr><td>Bill Portal</td><td>sngpl.com.pk</td><td>24/7</td></tr>
               </tbody>
             </table>
 

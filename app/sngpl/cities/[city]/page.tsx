@@ -110,11 +110,11 @@ export default async function CityHubPage({
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `How do I check my SNGPL bill in ${city.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Visit billchecker.sngpl.com.pk, enter your consumer number, and click "Get Bill." Your current bill, meter readings, amount due, and due date will appear instantly. You can also use the SNGPL Consumer app or send your consumer number to SNGPL's WhatsApp.` } },
+      { '@type': 'Question', name: `How do I check my SNGPL bill in ${city.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Visit sngpl.com.pk, enter your consumer number, and click "Get Bill." Your current bill, meter readings, amount due, and due date will appear instantly. You can also use the SNGPL Consumer app or send your consumer number to SNGPL's WhatsApp.` } },
       { '@type': 'Question', name: `How do I find my SNGPL consumer number in ${city.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Your consumer number is on the top of every gas bill under "Consumer No." or "Cust. No." It is also on your meter card near the gas meter. Call SNGPL helpline 1199 with your CNIC and address if you cannot find it.` } },
       { '@type': 'Question', name: `Where is the SNGPL office in ${city.name}?`, acceptedAnswer: { '@type': 'Answer', text: `The SNGPL Service Delivery Center for ${city.name} is located at: ${city.office}. Working hours are Monday to Friday, 9 AM to 5 PM. Call SNGPL helpline 1199 (24/7) for immediate assistance.` } },
       { '@type': 'Question', name: `How do I pay SNGPL bill online in ${city.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Pay via Easypaisa (Bill Payments → Gas → SNGPL), JazzCash (Pay Bills → Gas), HBL/UBL/MCB bank apps (Utility Bills → SNGPL), or any bank ATM (Bill Payment → Gas → SNGPL). Enter your consumer number to fetch the bill and confirm payment.` } },
-      { '@type': 'Question', name: `How do I download a duplicate SNGPL bill in ${city.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Visit billchecker.sngpl.com.pk, enter your consumer number, and click "Download PDF." The SNGPL mobile app provides access to 12 months of bill history. For a stamped physical copy, visit ${city.office}.` } },
+      { '@type': 'Question', name: `How do I download a duplicate SNGPL bill in ${city.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Visit sngpl.com.pk, enter your consumer number, and click "Download PDF." The SNGPL mobile app provides access to 12 months of bill history. For a stamped physical copy, visit ${city.office}.` } },
       { '@type': 'Question', name: `What is the SNGPL helpline number for ${city.name}?`, acceptedAnswer: { '@type': 'Answer', text: `SNGPL helpline 1199 is available 24/7 for all consumers in ${city.name} and ${city.division}. Use it for billing disputes, consumer number recovery, gas emergencies, complaint registration, and service requests.` } },
     ],
   };
@@ -221,7 +221,7 @@ export default async function CityHubPage({
               <div className="mt-4 space-y-2">
                 <a href="tel:1199" className="flex items-center gap-2 text-sm font-bold text-blue-700">📞 1199 — SNGPL Helpline (24/7)</a>
                 <a href="https://selfservice.sngpl.com.pk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:underline">🌐 selfservice.sngpl.com.pk</a>
-                <a href="https://billchecker.sngpl.com.pk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:underline">🔍 billchecker.sngpl.com.pk</a>
+                <a href="https://sngpl.com.pk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:underline">🔍 sngpl.com.pk</a>
               </div>
             </div>
             <div>
@@ -244,7 +244,7 @@ export default async function CityHubPage({
           <p>As an SNGPL consumer in {city.name}, you have access to a comprehensive range of digital services that allow you to manage your gas account entirely online — from checking your monthly bill and downloading duplicate copies to making payments and registering complaints. This guide consolidates everything you need to know about SNGPL services specific to {city.name}.</p>
 
           <h3>Checking Your SNGPL Bill in {city.name}</h3>
-          <p>The official SNGPL bill checking portal at billchecker.sngpl.com.pk gives {city.name} consumers instant access to their current gas bill. Enter your 10–13 digit consumer number (found on any printed bill) and your complete bill details appear immediately — including this month's meter readings, HHM consumed, slab-wise charges, GIDC, GST, total amount due, and payment due date. The portal is available 24/7 and requires no registration.</p>
+          <p>The official SNGPL bill checking portal at sngpl.com.pk gives {city.name} consumers instant access to their current gas bill. Enter your 10–13 digit consumer number (found on any printed bill) and your complete bill details appear immediately — including this month's meter readings, HHM consumed, slab-wise charges, GIDC, GST, total amount due, and payment due date. The portal is available 24/7 and requires no registration.</p>
           <p>The SNGPL Consumer mobile app (available on Google Play and App Store) provides an even more comprehensive bill management experience for {city.name} consumers, including up to 12 months of billing history, push notifications when new bills are generated, and direct payment integration. After registering with your consumer number and mobile OTP, your {city.name} account is permanently accessible through the app.</p>
 
           <h3>Consumer Number Guide for {city.name}</h3>
@@ -252,12 +252,12 @@ export default async function CityHubPage({
           <p>If you have lost your consumer number, {city.name} consumers have several recovery options: call SNGPL helpline 1199 with your CNIC and complete connection address, visit {city.office} in person with your CNIC, check old Easypaisa or JazzCash payment receipts (which reference the consumer number used), or review old emails from SNGPL if you are on e-billing.</p>
 
           <h3>Duplicate Bill Download for {city.name} Consumers</h3>
-          <p>Lost or never received your SNGPL gas bill in {city.name}? A duplicate bill is available instantly through the official portal — no need to visit the SNGPL office. Simply enter your consumer number on billchecker.sngpl.com.pk and click "Download PDF." The downloaded PDF is legally equivalent to the original posted bill and is accepted for bank payments, address verification (bank account opening, CNIC renewal, visa applications), and all other official purposes.</p>
+          <p>Lost or never received your SNGPL gas bill in {city.name}? A duplicate bill is available instantly through the official portal — no need to visit the SNGPL office. Simply enter your consumer number on sngpl.com.pk and click "Download PDF." The downloaded PDF is legally equivalent to the original posted bill and is accepted for bank payments, address verification (bank account opening, CNIC renewal, visa applications), and all other official purposes.</p>
           <p>SNGPL's postal delivery of original bills can be unreliable in some parts of {city.name}, particularly in densely populated areas like {city.areas}. Making it a habit to download and archive your bill digitally each month — via the portal or mobile app — ensures you always have a copy regardless of postal reliability.</p>
 
           <h3>Paying Your SNGPL Bill in {city.name}</h3>
           <p>SNGPL gas bill payment in {city.name} is available through multiple convenient channels. Easypaisa (Bill Payments → Gas → SNGPL → enter consumer number) and JazzCash (Pay Bills → Gas → SNGPL) are the most widely used methods, both available on smartphones and basic phones (via *786# USSD). All major banks in {city.name} — HBL, UBL, MCB, Meezan Bank, Allied Bank, Bank Alfalah — support SNGPL payment through their mobile apps and internet banking portals under "Utility Bills → Gas → SNGPL."</p>
-          <p>For consumers in {city.name} who prefer in-person payment, any bank branch ATM or counter accepts SNGPL bill payments. SNGPL-authorized franchise outlets in {city.name} also accept cash payments without any surcharge. Always pay before the due date printed on your bill to avoid the 10% late payment surcharge. After paying digitally, wait 24–48 hours and verify on billchecker.sngpl.com.pk that your payment has reflected before assuming the transaction is complete.</p>
+          <p>For consumers in {city.name} who prefer in-person payment, any bank branch ATM or counter accepts SNGPL bill payments. SNGPL-authorized franchise outlets in {city.name} also accept cash payments without any surcharge. Always pay before the due date printed on your bill to avoid the 10% late payment surcharge. After paying digitally, wait 24–48 hours and verify on sngpl.com.pk that your payment has reflected before assuming the transaction is complete.</p>
 
           <h3>Troubleshooting SNGPL Issues in {city.name}</h3>
           <p>The most common SNGPL issues reported by {city.name} consumers include: unexpectedly high bill amounts (typically caused by winter heating demand pushing consumption into higher tariff slabs, or estimated readings that overestimated actual usage), payment not reflecting on the portal (digital payments take 24–48 hours to process; call 1199 with your transaction ID if not reflected after 48 hours), and gas supply interruptions (call 1199 for area-wide outages or check SNGPL's social media for announcements).</p>
@@ -277,11 +277,11 @@ export default async function CityHubPage({
           <h2 className="text-xl font-bold text-gray-900 mb-6">Frequently Asked Questions — SNGPL {city.name}</h2>
           <div className="space-y-3">
             {[
-              { q: `How do I check my SNGPL bill in ${city.name}?`, a: `Visit billchecker.sngpl.com.pk, enter your 10–13 digit consumer number, and click "Get Bill." Your current bill details appear immediately — no registration required.` },
+              { q: `How do I check my SNGPL bill in ${city.name}?`, a: `Visit sngpl.com.pk, enter your 10–13 digit consumer number, and click "Get Bill." Your current bill details appear immediately — no registration required.` },
               { q: `What is my SNGPL consumer number and where is it?`, a: `Your consumer number is on the top of every gas bill under "Consumer No." or "Cust. No." Also on your meter card. Call 1199 with your CNIC to recover it if lost.` },
               { q: `How do I pay my SNGPL ${city.name} bill online?`, a: `Open Easypaisa → Bill Payments → Gas → SNGPL → enter consumer number. Or JazzCash → Pay Bills → Gas → SNGPL. Or your bank app (HBL, UBL, MCB) → Utility Bills → SNGPL.` },
               { q: `Where is the SNGPL office in ${city.name}?`, a: `${city.office}. Working hours: Monday–Friday, 9 AM–5 PM. Call 1199 (24/7) for remote assistance.` },
-              { q: `How do I download a duplicate SNGPL bill in ${city.name}?`, a: `Visit billchecker.sngpl.com.pk, enter your consumer number, and click "Download PDF." Free and instant — no registration needed.` },
+              { q: `How do I download a duplicate SNGPL bill in ${city.name}?`, a: `Visit sngpl.com.pk, enter your consumer number, and click "Download PDF." Free and instant — no registration needed.` },
               { q: `My SNGPL bill is very high this month in ${city.name}. Why?`, a: `Common reasons: winter heating increased consumption into higher tariff slabs, an estimated reading was used that overestimated usage, or arrears from a previous month were added. Compare your meter reading to the billed reading — if different, call 1199.` },
             ].map((faq, i) => (
               <details key={i} className="group bg-white border border-gray-200 rounded-xl overflow-hidden">

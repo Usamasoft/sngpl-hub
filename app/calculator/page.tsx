@@ -3,17 +3,17 @@ import GasCalculator from '../components/GasCalculator';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'SNGPL Gas Bill Calculator 2025 — Estimate Monthly Bill Online',
-  description: 'Calculate your SNGPL gas bill instantly. Enter HHM units or meter readings — full breakdown with GST, GIDC and slab rates. Free online tool 2025.',
+  title: 'SNGPL Gas Bill Calculator 2026 — Estimate Monthly Bill Online',
+  description: 'Calculate your SNGPL gas bill instantly. Enter HHM units or meter readings — full breakdown with GST, GIDC and slab rates. Free online tool 2026.',
   alternates: { canonical: 'https://sngplbillcheck.pk/calculator' },
   openGraph: {
-    title: 'SNGPL Gas Bill Calculator 2025 — Estimate Monthly Gas Bill',
+    title: 'SNGPL Gas Bill Calculator 2026 — Estimate Monthly Gas Bill',
     description: 'Free SNGPL gas bill calculator. Enter HHM units or meter readings for a full breakdown with GST, GIDC, and OGRA slab rates.',
     url: 'https://sngplbillcheck.pk/calculator',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SNGPL Gas Bill Calculator 2025',
+    title: 'SNGPL Gas Bill Calculator 2026',
     description: 'Estimate your SNGPL gas bill. Enter HHM units, see full breakdown with slabs, GIDC & GST. Free tool.',
   },
 };
@@ -52,7 +52,7 @@ const faqItems = [
   { q: 'How do I reduce my SNGPL gas bill?', a: 'Key strategies: upgrade to an instant geyser (saves 30–40% over storage), use a pressure cooker for cooking (saves 50–70% vs open pots), insulate your home to reduce heater run time, set your geyser thermostat to 50°C (not 70°C), fix all gas leaks promptly, and schedule appliance servicing annually before winter.' },
   { q: 'What is the typical winter gas bill in Lahore?', a: 'In Lahore, a medium-sized household with an instant geyser, cooking range, and one or two room heaters typically consumes 200–400 HHM in peak winter (December–February). At 300 HHM, the approximate bill would be: base Rs. 19,700 + GIDC Rs. 1,970 + GST Rs. 3,684 = approximately Rs. 25,354.' },
   { q: 'How do meter readings get estimated on SNGPL bills?', a: 'When SNGPL\'s meter reader cannot physically access your meter (locked gate, aggressive dog, property inaccessible), they issue an "E" (estimated) reading based on your historical average consumption. Estimated readings may be higher or lower than actual. Always check if your reading is actual (A) or estimated (E) on your bill.' },
-  { q: 'Can gas bills be checked from abroad?', a: 'Yes. You can check SNGPL bills and pay them from anywhere in the world with internet access. Visit billchecker.sngpl.com.pk from any country to view bills. For payment, family members in Pakistan can pay via Easypaisa/JazzCash, or you can use international bank transfers through your Pakistani bank\'s mobile app.' },
+  { q: 'Can gas bills be checked from abroad?', a: 'Yes. You can check SNGPL bills and pay them from anywhere in the world with internet access. Visit sngpl.com.pk from any country to view bills. For payment, family members in Pakistan can pay via Easypaisa/JazzCash, or you can use international bank transfers through your Pakistani bank\'s mobile app.' },
   { q: 'What happens to my SNGPL balance if I overpay?', a: 'If you pay more than the amount due, the excess is recorded as an advance credit on your SNGPL account and automatically applied to reduce your next month\'s bill. SNGPL does not refund small overpayments — they roll over to future bills. For large overpayments, you can request a refund through SNGPL\'s self-service portal.' },
 ];
 

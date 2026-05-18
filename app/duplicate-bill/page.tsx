@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const methods = [
   {
     icon: '🌐', title: 'Official Portal (Fastest)', badge: 'Recommended', steps: [
-      'Open billchecker.sngpl.com.pk in any browser',
+      'Open sngpl.com.pk in any browser',
       'Enter your 10–13 digit consumer number',
       'Click "Get Bill" to view your current bill',
       'Click "Download PDF" or "Print Bill" button',
@@ -68,15 +68,15 @@ const methods = [
 
 const faqs = [
   { q: 'Is a duplicate SNGPL bill valid for bank payment?', a: 'Yes. A duplicate SNGPL bill downloaded from the official portal, mobile app, or printed at the SNGPL office is equally valid for payment at any bank branch, ATM, Easypaisa, JazzCash, or SNGPL franchise. The barcode and 17-digit payment reference number are identical to the original bill.' },
-  { q: 'Is there a fee for downloading a duplicate SNGPL bill online?', a: 'No. Downloading your duplicate SNGPL bill from billchecker.sngpl.com.pk or the SNGPL Consumer mobile app is completely free. There is no charge for online or app-based duplicate bills. The SNGPL office may charge a nominal fee (Rs. 20–50) for physically printed and officially stamped copies.' },
-  { q: 'How do I get a duplicate bill for previous months?', a: 'The SNGPL Consumer mobile app stores up to 12 months of billing history — tap "My Bills" and select any previous month. The official portal (billchecker.sngpl.com.pk) typically shows only the current or most recent bill. For bills older than 12 months, visit your SNGPL Service Delivery Center with your CNIC.' },
+  { q: 'Is there a fee for downloading a duplicate SNGPL bill online?', a: 'No. Downloading your duplicate SNGPL bill from sngpl.com.pk or the SNGPL Consumer mobile app is completely free. There is no charge for online or app-based duplicate bills. The SNGPL office may charge a nominal fee (Rs. 20–50) for physically printed and officially stamped copies.' },
+  { q: 'How do I get a duplicate bill for previous months?', a: 'The SNGPL Consumer mobile app stores up to 12 months of billing history — tap "My Bills" and select any previous month. The official portal (sngpl.com.pk) typically shows only the current or most recent bill. For bills older than 12 months, visit your SNGPL Service Delivery Center with your CNIC.' },
   { q: 'What does "duplicate" mean on an SNGPL bill?', a: '"Duplicate" simply means it is a reprint or digital copy of the original. It contains identical information and is legally and practically equivalent to the original bill for all payment and verification purposes. In Pakistan, a duplicate gas bill is standard documentation accepted by banks, institutions, and government offices.' },
-  { q: 'My bill is overdue and I lost the original. What should I do?', a: 'Download a duplicate immediately from billchecker.sngpl.com.pk and pay as soon as possible. A 10% late surcharge will appear on your next bill for the overdue period, but paying now stops further accumulation. Call SNGPL helpline 1199 if you need information about your exact outstanding amount.' },
+  { q: 'My bill is overdue and I lost the original. What should I do?', a: 'Download a duplicate immediately from sngpl.com.pk and pay as soon as possible. A 10% late surcharge will appear on your next bill for the overdue period, but paying now stops further accumulation. Call SNGPL helpline 1199 if you need information about your exact outstanding amount.' },
   { q: 'Can I use a duplicate bill as address proof?', a: 'Yes. An SNGPL gas bill (original or official duplicate) is widely accepted as address verification by banks for account opening, educational institutions, and government offices for various applications. For legal proceedings or international visa applications, a physically stamped duplicate from the SNGPL office is recommended for higher credibility.' },
-  { q: 'My physical bill never arrives in the post. Is this normal?', a: 'Unfortunately, yes — postal delivery of SNGPL bills is unreliable in many Pakistani cities. Delayed or lost postal delivery is very common. This is why checking your bill online monthly is strongly recommended rather than relying on postal delivery. Setting a monthly reminder to check billchecker.sngpl.com.pk prevents late payments from delayed post.' },
+  { q: 'My physical bill never arrives in the post. Is this normal?', a: 'Unfortunately, yes — postal delivery of SNGPL bills is unreliable in many Pakistani cities. Delayed or lost postal delivery is very common. This is why checking your bill online monthly is strongly recommended rather than relying on postal delivery. Setting a monthly reminder to check sngpl.com.pk prevents late payments from delayed post.' },
   { q: 'Can I get a SNGPL bill older than 12 months?', a: 'Bills older than 12 months are not available through the mobile app or online portal. For these older bills, visit your SNGPL Service Delivery Center with your CNIC. SNGPL can print historical bills from their billing archive, typically going back 2–3 years. A fee may apply for printing archived bills.' },
   { q: 'Is a PDF bill printed on plain paper accepted for address proof?', a: 'A printed copy of the PDF downloaded from the official SNGPL portal is generally accepted for address proof in most situations. However, for formal legal, government, or banking purposes where an "original document" is required, present the PDF on a mobile screen or request an officially stamped copy from an SNGPL Service Delivery Center.' },
-  { q: 'How do I download a duplicate bill for a property I manage as landlord?', a: 'If the gas connection is in your name (you are the registered account owner), enter the consumer number on billchecker.sngpl.com.pk or the SNGPL app to download the bill. If the connection is in a tenant\'s name or you need access to multiple properties, use the consumer numbers for each property — no special landlord access is required.' },
+  { q: 'How do I download a duplicate bill for a property I manage as landlord?', a: 'If the gas connection is in your name (you are the registered account owner), enter the consumer number on sngpl.com.pk or the SNGPL app to download the bill. If the connection is in a tenant\'s name or you need access to multiple properties, use the consumer numbers for each property — no special landlord access is required.' },
   { q: 'What if the Download PDF button is missing on the SNGPL portal?', a: 'The download button availability varies by browser and portal version. If it is missing, use your browser\'s built-in PDF printing: press Ctrl+P (Windows) or Cmd+P (Mac), select "Save as PDF" as the printer/destination, adjust print settings to fit the page, and click Save. The resulting PDF is a valid duplicate bill.' },
   { q: 'Can my tenant get a duplicate bill without my CNIC?', a: 'Yes. Downloading a duplicate bill from the portal or mobile app requires only the consumer number — no CNIC or identity verification. Your tenant can download the bill by entering the consumer number. However, they cannot make account changes without the registered owner\'s presence and CNIC.' },
 ];
@@ -90,7 +90,7 @@ export default function DuplicateBillPage() {
         name: 'How to Download SNGPL Duplicate Bill',
         description: 'Step-by-step guide to download a duplicate SNGPL gas bill online via portal, mobile app, WhatsApp, or SMS.',
         step: [
-          { '@type': 'HowToStep', position: 1, name: 'Open Official Portal', text: 'Go to billchecker.sngpl.com.pk in any browser.' },
+          { '@type': 'HowToStep', position: 1, name: 'Open Official Portal', text: 'Go to sngpl.com.pk in any browser.' },
           { '@type': 'HowToStep', position: 2, name: 'Enter Consumer Number', text: 'Type your 10–13 digit consumer number and click Get Bill.' },
           { '@type': 'HowToStep', position: 3, name: 'Download PDF', text: 'Click the Download PDF or Print Bill button to save your duplicate.' },
         ],
@@ -159,7 +159,7 @@ export default function DuplicateBillPage() {
           <li><strong>New area or recently changed address:</strong> If you have recently moved or if your area has been newly incorporated into SNGPL&apos;s postal delivery route, bills may take several months to start arriving reliably at the new address.</li>
           <li><strong>Holiday and seasonal delays:</strong> Pakistan Post experiences particularly significant delays around major national holidays (Eid, Independence Day), monsoon season (when roads may be impassable), and year-end periods.</li>
         </ul>
-        <p>The solution is simple: do not wait for your physical bill. Set a monthly calendar reminder approximately 5 days before your expected bill due date and proactively check billchecker.sngpl.com.pk. This takes 30 seconds and eliminates any risk of missing a due date due to postal issues.</p>
+        <p>The solution is simple: do not wait for your physical bill. Set a monthly calendar reminder approximately 5 days before your expected bill due date and proactively check sngpl.com.pk. This takes 30 seconds and eliminates any risk of missing a due date due to postal issues.</p>
 
         <h2>All 5 Methods to Get Your SNGPL Duplicate Bill</h2>
       </div>

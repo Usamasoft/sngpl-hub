@@ -22,7 +22,7 @@ export default function Footer() {
             </p>
             <div className="mt-4 p-3 bg-gray-800 rounded-xl text-xs text-gray-400 leading-relaxed">
               ⚠️ Not affiliated with SNGPL. This site only redirects to the official portal at{' '}
-              <strong className="text-gray-300">billchecker.sngpl.com.pk</strong>
+              <strong className="text-gray-300">sngpl.com.pk</strong>
             </div>
           </div>
 
@@ -50,7 +50,7 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-3 text-sm">Official Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="https://billchecker.sngpl.com.pk/" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.sngpl.com.pk/login.jsp?mdids=85" target="_blank" rel="noopener noreferrer"
                    className="hover:text-green-400 transition-colors flex items-center gap-1">
                   SNGPL Bill Portal ↗
                 </a>
@@ -83,6 +83,9 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <Link href="/sngpl/cities" className="inline-block mt-2 text-xs text-blue-400 hover:text-blue-300 transition-colors">
+              View all 44 cities →
+            </Link>
           </div>
         </div>
 

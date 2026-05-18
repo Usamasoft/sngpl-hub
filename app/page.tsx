@@ -52,11 +52,11 @@ const paymentMethods = [
 ];
 
 const faqItems = [
-  { q: 'How do I check my SNGPL gas bill online?', a: 'Visit billchecker.sngpl.com.pk, enter your 10–13 digit consumer number (printed on your bill under "Consumer No."), and click "Get Bill." Your current bill with amount due, meter readings, and due date will appear. You can also use the SNGPL Consumer mobile app (Android/iOS) or send your consumer number via WhatsApp to SNGPL\'s official number.' },
+  { q: 'How do I check my SNGPL gas bill online?', a: 'Visit sngpl.com.pk, enter your 10–13 digit consumer number (printed on your bill under "Consumer No."), and click "Get Bill." Your current bill with amount due, meter readings, and due date will appear. You can also use the SNGPL Consumer mobile app (Android/iOS) or send your consumer number via WhatsApp to SNGPL\'s official number.' },
   { q: 'What is an SNGPL consumer number?', a: 'Your SNGPL consumer number is a unique 10–13 digit account identifier assigned to your gas connection. It is printed on every gas bill in the top section labeled "Consumer No." or "Cust. No." This number is required for checking bills online, making payments via Easypaisa/JazzCash, and registering complaints.' },
   { q: 'What is the SNGPL helpline number?', a: 'The SNGPL helpline number is 1199, available 24 hours a day, 7 days a week. You can call for billing inquiries, complaint registration, gas emergency reports, and consumer number recovery. SNGPL\'s online self-service portal is at selfservice.sngpl.com.pk.' },
   { q: 'How do I pay my SNGPL bill online?', a: 'Pay via Easypaisa (Bill Payments → Gas → SNGPL), JazzCash (Pay Bills → Gas), HBL/UBL/MCB internet banking (Utility Payments → SNGPL), or any ATM (Bill Payment → Gas → SNGPL). Enter your consumer number to fetch your bill amount and confirm payment. JazzCash USSD *786# works on basic phones without internet.' },
-  { q: 'How do I download a duplicate SNGPL bill?', a: 'Visit billchecker.sngpl.com.pk, enter your consumer number, and click "Download PDF" on the results page. Alternatively, use the SNGPL Consumer mobile app (stores 12 months of bills) or contact SNGPL helpline 1199. A duplicate bill is equally valid for bank payments and address verification.' },
+  { q: 'How do I download a duplicate SNGPL bill?', a: 'Visit sngpl.com.pk, enter your consumer number, and click "Download PDF" on the results page. Alternatively, use the SNGPL Consumer mobile app (stores 12 months of bills) or contact SNGPL helpline 1199. A duplicate bill is equally valid for bank payments and address verification.' },
   { q: 'What is HHM in SNGPL gas bill?', a: 'HHM stands for Hundred Heat Meter — the unit SNGPL uses to measure natural gas consumption. One HHM equals 100 cubic feet of gas. Your meter display shows cumulative HHM readings. The difference between current and previous month readings gives your HHM consumed, which is applied to SNGPL\'s slab tariff to calculate your bill.' },
   { q: 'What is GIDC on my gas bill?', a: 'GIDC is the Gas Infrastructure Development Cess — a government levy charged at 10% of your base gas consumption amount. It funds gas infrastructure development projects across Pakistan. GIDC appears as a separate line item on your SNGPL bill and is applied before the 17% GST calculation.' },
   { q: 'What happens if I miss the SNGPL payment due date?', a: 'A 10% late payment surcharge is added to your next bill for overdue payment. If the bill remains unpaid for multiple months, SNGPL may issue a disconnection notice and eventually disconnect your gas supply. After disconnection, a reconnection fee applies. Always pay by the due date printed on your bill.' },
@@ -97,6 +97,21 @@ export default function HomePage() {
           target: 'https://sngplbillcheck.pk/?q={search_term_string}',
           'query-input': 'required name=search_term_string',
         },
+      }) }} />
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'SNGPL Consumer Tools & Guides',
+        description: 'Complete set of free SNGPL gas bill tools and consumer guides for Pakistan',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'SNGPL Bill Check Guide',   url: 'https://sngplbillcheck.pk/bill-check' },
+          { '@type': 'ListItem', position: 2, name: 'Consumer Number Help',     url: 'https://sngplbillcheck.pk/consumer-number' },
+          { '@type': 'ListItem', position: 3, name: 'Duplicate Bill Download',  url: 'https://sngplbillcheck.pk/duplicate-bill' },
+          { '@type': 'ListItem', position: 4, name: 'Bill Payment Guide',       url: 'https://sngplbillcheck.pk/payment-guide' },
+          { '@type': 'ListItem', position: 5, name: 'Gas Bill Calculator',      url: 'https://sngplbillcheck.pk/calculator' },
+          { '@type': 'ListItem', position: 6, name: 'All SNGPL Guides',         url: 'https://sngplbillcheck.pk/guides' },
+        ],
       }) }} />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -284,7 +299,7 @@ export default function HomePage() {
           </div>
           <div className="prose-content">
             <p>Sui Northern Gas Pipelines Limited (SNGPL) is Pakistan&apos;s largest natural gas utility, serving over 7 million consumers across Punjab, KPK, and Azad Kashmir. Every consumer receives a monthly bill showing HHM consumption, slab-based gas charges, GIDC (10%), and GST (17%).</p>
-            <p>You can check your SNGPL bill online via <strong>billchecker.sngpl.com.pk</strong>, the SNGPL mobile app (Android/iOS), WhatsApp, or SMS — each method takes under a minute and only requires your consumer number.</p>
+            <p>You can check your SNGPL bill online via <strong>sngpl.com.pk</strong>, the SNGPL mobile app (Android/iOS), WhatsApp, or SMS — each method takes under a minute and only requires your consumer number.</p>
             <p className="mt-2">
               <Link href="/bill-check" className="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:text-blue-800">
                 Read the complete bill-check guide — all 4 methods explained →
@@ -341,7 +356,7 @@ export default function HomePage() {
 
             <div className="bg-white border border-gray-200 rounded-2xl p-6">
               <h3 className="font-bold text-gray-900 mb-2">Duplicate SNGPL Bill</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-3">Need a copy of your gas bill? Download instantly from billchecker.sngpl.com.pk or the SNGPL app (12-month history). A duplicate PDF is accepted by all banks, ATMs, and payment apps — no stamp needed for payments.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">Need a copy of your gas bill? Download instantly from sngpl.com.pk or the SNGPL app (12-month history). A duplicate PDF is accepted by all banks, ATMs, and payment apps — no stamp needed for payments.</p>
               <Link href="/duplicate-bill" className="text-blue-600 text-sm font-semibold hover:text-blue-800">Download duplicate bill guide →</Link>
             </div>
 
@@ -426,7 +441,7 @@ export default function HomePage() {
               <Link href="#checker" className="bg-white text-blue-700 font-bold px-8 py-3.5 rounded-xl hover:bg-blue-50 transition-colors">
                 Check Bill Now
               </Link>
-              <a href="https://billchecker.sngpl.com.pk/" target="_blank" rel="noopener noreferrer"
+              <a href="https://sngpl.com.pk/" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition-all">
                 Official SNGPL Portal ↗
               </a>

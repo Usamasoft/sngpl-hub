@@ -28,11 +28,11 @@ const toc = [
 ];
 
 const faqs = [
-  { q: 'How can I download my SNGPL duplicate bill?', a: 'You can download your SNGPL duplicate bill by visiting the official portal at billchecker.sngpl.com.pk, entering your consumer number, and clicking the Print/Download option. Use your browser\'s "Save as PDF" option to save it to your device. It takes less than 2 minutes.' },
+  { q: 'How can I download my SNGPL duplicate bill?', a: 'You can download your SNGPL duplicate bill by visiting the official portal at sngpl.com.pk, entering your consumer number, and clicking the Print/Download option. Use your browser\'s "Save as PDF" option to save it to your device. It takes less than 2 minutes.' },
   { q: 'Is a duplicate SNGPL bill valid for payment?', a: 'Yes, a duplicate SNGPL bill downloaded from the official portal is completely valid for payment. Banks, mobile apps (EasyPaisa, JazzCash), and payment centers all accept it. It carries the same legal status as the original printed bill.' },
   { q: 'How many times can I download my SNGPL duplicate bill?', a: 'There is no limit on how many times you can download your SNGPL duplicate bill from the official portal. You can download it as many times as needed, for as many months as available in the system (typically the last 6-12 months).' },
   { q: 'Can I get a duplicate bill for previous months?', a: 'Yes. The SNGPL portal allows you to access bills for previous months (typically the last 6-12 months). After entering your consumer number, look for options to select different billing months or navigate through bill history.' },
-  { q: 'My SNGPL bill did not arrive. Can I get a duplicate?', a: 'Absolutely. If your physical bill did not arrive by post, or was lost or damaged, you can immediately download a duplicate from billchecker.sngpl.com.pk. This is the recommended way to ensure you always have your bill on time.' },
+  { q: 'My SNGPL bill did not arrive. Can I get a duplicate?', a: 'Absolutely. If your physical bill did not arrive by post, or was lost or damaged, you can immediately download a duplicate from sngpl.com.pk. This is the recommended way to ensure you always have your bill on time.' },
   { q: 'What if the SNGPL website is not working?', a: 'If the SNGPL portal is temporarily down, try again after a few hours. Alternatively, contact SNGPL via WhatsApp (0311-7000-786) or call 1199 to get your bill amount. For urgent payment needs, most banks\' mobile apps can retrieve your bill amount using just your consumer number.' },
   { q: 'Can I print my SNGPL duplicate bill at home?', a: 'Yes. After downloading the bill as PDF, you can print it on any printer at home or at a nearby printing shop. The printout is accepted at all payment locations. Make sure to print in black and white or color — both are accepted.' },
   { q: 'Is there a fee for getting a duplicate SNGPL bill?', a: 'No. Downloading a duplicate SNGPL bill from the official online portal is completely free. There are no charges for accessing or downloading your bill online. If you visit an SNGPL office for a printed duplicate, a nominal printing fee may apply.' },
@@ -55,7 +55,7 @@ export default function SNGPLDuplicateBillPage() {
         name: 'How to Download SNGPL Duplicate Bill',
         description: 'Step-by-step guide to download SNGPL duplicate gas bill online',
         step: [
-          { '@type': 'HowToStep', position: 1, name: 'Visit SNGPL Portal', text: 'Go to billchecker.sngpl.com.pk' },
+          { '@type': 'HowToStep', position: 1, name: 'Visit SNGPL Portal', text: 'Go to sngpl.com.pk' },
           { '@type': 'HowToStep', position: 2, name: 'Enter Consumer Number', text: 'Type your 10-digit SNGPL consumer number' },
           { '@type': 'HowToStep', position: 3, name: 'View Bill', text: 'Your bill details will be displayed' },
           { '@type': 'HowToStep', position: 4, name: 'Download PDF', text: 'Click Print/Download and save as PDF' },
@@ -84,7 +84,7 @@ export default function SNGPLDuplicateBillPage() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="#online-method" className="btn-secondary bg-white text-purple-700 border-white">Download My Bill ↓</Link>
-                <a href="https://billchecker.sngpl.com.pk/" target="_blank" rel="noopener noreferrer"
+                <a href="https://sngpl.com.pk/" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition-all text-sm">
                   Official Portal ↗
                 </a>
@@ -190,7 +190,7 @@ export default function SNGPLDuplicateBillPage() {
             <h3>Step-by-Step Instructions</h3>
             <ol>
               <li><strong>Open your web browser</strong> — Chrome, Firefox, Edge, or Safari on your computer</li>
-              <li><strong>Navigate to:</strong> <code className="bg-gray-100 px-2 py-0.5 rounded text-sm font-mono">billchecker.sngpl.com.pk</code></li>
+              <li><strong>Navigate to:</strong> <code className="bg-gray-100 px-2 py-0.5 rounded text-sm font-mono">sngpl.com.pk</code></li>
               <li><strong>Find the consumer number input field</strong> on the homepage of the portal</li>
               <li><strong>Enter your 10-digit SNGPL consumer number</strong> without spaces or dashes</li>
               <li><strong>Complete CAPTCHA verification</strong> if shown (click on the checkbox or solve the image puzzle)</li>
@@ -234,7 +234,7 @@ export default function SNGPLDuplicateBillPage() {
             <h3>On Android Phone (Chrome Browser)</h3>
             <ol>
               <li>Open <strong>Chrome</strong> browser on your Android phone</li>
-              <li>Go to <strong>billchecker.sngpl.com.pk</strong></li>
+              <li>Go to <strong>sngpl.com.pk</strong></li>
               <li>Enter your consumer number and submit</li>
               <li>When the bill loads, tap the <strong>Print Bill</strong> button</li>
               <li>The bill opens in a printable view</li>
@@ -248,7 +248,7 @@ export default function SNGPLDuplicateBillPage() {
             <h3>On iPhone (Safari Browser)</h3>
             <ol>
               <li>Open <strong>Safari</strong> on your iPhone</li>
-              <li>Navigate to <strong>billchecker.sngpl.com.pk</strong></li>
+              <li>Navigate to <strong>sngpl.com.pk</strong></li>
               <li>Enter consumer number and view your bill</li>
               <li>Tap the <strong>Print Bill</strong> option</li>
               <li>Tap the <strong>Share icon</strong> (box with arrow pointing up) at the bottom</li>

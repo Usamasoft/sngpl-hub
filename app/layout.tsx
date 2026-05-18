@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'SNGPL Bill Check Hub',
     title: 'SNGPL Gas Bill Check Online | Pakistan Gas Bill Hub',
     description: 'Check SNGPL gas bills online. Consumer number guide, duplicate bill download, bill calculator & more.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'SNGPL Bill Check Hub' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'SNGPL Bill Check Hub — Pakistan Gas Bill Checker' }],
   },
   twitter: {
     card: 'summary_large_image',
